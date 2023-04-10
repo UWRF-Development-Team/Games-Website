@@ -1,0 +1,8 @@
+{
+  "name": "Tic-Tac-Toe",
+  "version": "1.0.0",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "prompt-sync": "^4.2.0"
+  }
+}
