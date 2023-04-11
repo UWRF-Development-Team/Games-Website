@@ -139,7 +139,6 @@ document.addEventListener('DOMContentLoaded', function() {
         switchPlayer();
         notificationButton.innerText = `Turn: Player ${currentPlayer}`
         } else if (determineWinningMoves() === 1) {
-
             startButton.innerText = "Play Again";
             notificationButton.innerText = "Winner: Player One!";
         } else if (determineWinningMoves() === 2) {
