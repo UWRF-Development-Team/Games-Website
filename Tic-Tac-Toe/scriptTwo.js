@@ -29,6 +29,23 @@ spotSevenO.src = "./O.png"
 spotEightO.src = "./O.png"
 spotNineO.src = "./O.png"
 
+     let checkWin = player => {
+    //take player as parameter, check if it has 3 in a row, return
+         // 0 if it isn't a win, 1 (or x) if it is a win for x,
+         // or 2 (or o) if it is a win for o.
+     }
+         const winArray = [[1,2,3],
+                                 [4,5,6],
+                                 [7,8,9],
+                                 [1,4,7],
+                                 [2,5,8],
+                                 [3,6,9],
+                                 [1,5,9],
+                                 [3,5,7],
+                         ];
+         for(let i = 0; i < winArray.length; i++) {
+
+     }
 
 
     function clearBoard() {

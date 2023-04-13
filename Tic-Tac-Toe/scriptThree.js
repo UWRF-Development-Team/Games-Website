@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         board[] array is +1 to element objects
      */
-        if (spotOne.src === "./X.png" && spotTwo.src === "./X.png" && spotThree.src === "1") {
+        if (spotOne.src === "./X.png" && spotTwo.src === "./X.png" && spotThree.src === "./X.png") {
             if (spotOne.style.opacity > 0.9 && spotTwo.style.opacity > 0.9 && spotThree.style.opacity > 0.9) {
                 return 1;
             }
@@ -109,26 +109,24 @@ document.addEventListener('DOMContentLoaded', function() {
             return 0;
         }
     }
-
     function isWinner() {
-        if (determineWinningMoves(board) === 0) {
+        if (determineWinningMoves() === 0) {
             return false;
-        } else if (determineWinningMoves(board) === 1) {
-            console.log("Congratulations Player 1 (X) -- You are the winner!")
+        } else if (determineWinningMoves() === 1) {
             return true;
-        } else if (determineWinningMoves(board) === 2) {
-            console.log("Congratulations Player 2 (O) -- You are the winner!")
+        } else if (determineWinningMoves() === 2) {
             return true;
-            //make inner text "Play again"
         }
     }
 
     startButton.addEventListener('click', resetBoard);
-    const spotOne = document.getElementById('o-one');
+    const spotOne = document.getElementById('one');
     spotOne.addEventListener('click', function () {
+        // If spot is visible, you can't take it
         if (spotOne.style.opacity > 0.9) {
             return;
         }
+        // If nobody has won, continue the game.
         if (determineWinningMoves() === 0) {
             if (currentPlayer === 1) {
             spotOne.src = "./X.png";
@@ -137,17 +135,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         spotOne.style.opacity = 1;
         switchPlayer();
-        notificationButton.innerText = `Turn: Player ${currentPlayer}`
-        } else if (determineWinningMoves() === 1) {
-            startButton.innerText = "Play Again";
-            notificationButton.innerText = "Winner: Player One!";
-        } else if (determineWinningMoves() === 2) {
-            startButton.innerText = "Play Again";
-            notificationButton.innerText = "Winner: Player Two!";
+        notificationButton.innerText = `Turn: Player ${currentPlayer}`;
+        // If player 1 has won, announce they won and change text accordingly.
+        } else if (isWinner()) { 
+            if (determineWinningMoves() === 1) {
+                startButton.innerText = "Play Again";
+                notificationButton.innerText = "Winner: Player One!";
+            } else if (determineWinningMoves() === 2) {
+                // If player 1 has won, announce they won and change text accordingly.
+                startButton.innerText = "Play Again";
+                notificationButton.innerText = "Winner: Player Two!";
+            }
         }
-
     });
-    const spotTwo = document.getElementById('o-two');
+    const spotTwo = document.getElementById('two');
     spotTwo.addEventListener('click', function () {
         if (spotTwo.style.opacity > 0.9) {
             return;
@@ -161,15 +162,18 @@ document.addEventListener('DOMContentLoaded', function() {
         spotTwo.style.opacity = 1;
         switchPlayer();
         notificationButton.innerText = `Turn: Player ${currentPlayer}`
-        } else if (determineWinningMoves() === 1) {
-            startButton.innerText = "Play Again";
-            notificationButton.innerText = "Winner: Player One!";
-        } else if (determineWinningMoves() === 2) {
-            startButton.innerText = "Play Again";
-            notificationButton.innerText = "Winner: Player Two!";
+        } else if (isWinner()) { 
+            if (determineWinningMoves() === 1) {
+                startButton.innerText = "Play Again";
+                notificationButton.innerText = "Winner: Player One!";
+            } else if (determineWinningMoves() === 2) {
+                // If player 1 has won, announce they won and change text accordingly.
+                startButton.innerText = "Play Again";
+                notificationButton.innerText = "Winner: Player Two!";
+            }
         }
     });
-        const spotThree = document.getElementById('o-three');
+        const spotThree = document.getElementById('three');
         spotThree.addEventListener('click', function () {
         if (spotThree.style.opacity > 0.9) {
             return;
@@ -183,15 +187,18 @@ document.addEventListener('DOMContentLoaded', function() {
         spotThree.style.opacity = 1;
         switchPlayer();
         notificationButton.innerText = `Turn: Player ${currentPlayer}`
-        } else if (determineWinningMoves() === 1) {
-            startButton.innerText = "Play Again";
-            notificationButton.innerText = "Winner: Player One!";
-        } else if (determineWinningMoves() === 2) {
-            startButton.innerText = "Play Again";
-            notificationButton.innerText = "Winner: Player Two!";
+        } else if (isWinner()) { 
+            if (determineWinningMoves() === 1) {
+                startButton.innerText = "Play Again";
+                notificationButton.innerText = "Winner: Player One!";
+            } else if (determineWinningMoves() === 2) {
+                // If player 1 has won, announce they won and change text accordingly.
+                startButton.innerText = "Play Again";
+                notificationButton.innerText = "Winner: Player Two!";
+            }
         }
     });
-        const spotFour = document.getElementById('o-four');
+        const spotFour = document.getElementById('four');
         spotFour.addEventListener('click', function () {
         if (spotFour.style.opacity > 0.9) {
             return;
@@ -205,15 +212,18 @@ document.addEventListener('DOMContentLoaded', function() {
         spotFour.style.opacity = 1;
         switchPlayer();
         notificationButton.innerText = `Turn: Player ${currentPlayer}`
-        } else if (determineWinningMoves() === 1) {
-            startButton.innerText = "Play Again";
-            notificationButton.innerText = "Winner: Player One!";
-        } else if (determineWinningMoves() === 2) {
-            startButton.innerText = "Play Again";
-            notificationButton.innerText = "Winner: Player Two!";
+        } else if (isWinner()) { 
+            if (determineWinningMoves() === 1) {
+                startButton.innerText = "Play Again";
+                notificationButton.innerText = "Winner: Player One!";
+            } else if (determineWinningMoves() === 2) {
+                // If player 1 has won, announce they won and change text accordingly.
+                startButton.innerText = "Play Again";
+                notificationButton.innerText = "Winner: Player Two!";
+            }
         }
     });
-        const spotFive = document.getElementById('o-five');
+        const spotFive = document.getElementById('five');
         spotFive.addEventListener('click', function () {
         if (spotFive.style.opacity > 0.9) {
             return;
@@ -227,16 +237,19 @@ document.addEventListener('DOMContentLoaded', function() {
         spotFive.style.opacity = 1;
         switchPlayer();
         notificationButton.innerText = `Turn: Player ${currentPlayer}`
-        } else if (determineWinningMoves() === 1) {
-            startButton.innerText = "Play Again";
-            notificationButton.innerText = "Winner: Player One!";
-        } else if (determineWinningMoves() === 2) {
-            startButton.innerText = "Play Again";
-            notificationButton.innerText = "Winner: Player Two!";
+        } else if (isWinner()) { 
+            if (determineWinningMoves() === 1) {
+                startButton.innerText = "Play Again";
+                notificationButton.innerText = "Winner: Player One!";
+            } else if (determineWinningMoves() === 2) {
+                // If player 1 has won, announce they won and change text accordingly.
+                startButton.innerText = "Play Again";
+                notificationButton.innerText = "Winner: Player Two!";
+            }
         }
 
     });
-        const spotSix = document.getElementById('o-six');
+        const spotSix = document.getElementById('six');
         spotSix.addEventListener('click', function () {
         if (spotSix.style.opacity > 0.9) {
             return;
@@ -250,15 +263,18 @@ document.addEventListener('DOMContentLoaded', function() {
         spotSix.style.opacity = 1;
         switchPlayer();
         notificationButton.innerText = `Turn: Player ${currentPlayer}`
-        } else if (determineWinningMoves() === 1) {
-            startButton.innerText = "Play Again";
-            notificationButton.innerText = "Winner: Player One!";
-        } else if (determineWinningMoves() === 2) {
-            startButton.innerText = "Play Again";
-            notificationButton.innerText = "Winner: Player Two!";
+        } else if (isWinner()) { 
+            if (determineWinningMoves() === 1) {
+                startButton.innerText = "Play Again";
+                notificationButton.innerText = "Winner: Player One!";
+            } else if (determineWinningMoves() === 2) {
+                // If player 1 has won, announce they won and change text accordingly.
+                startButton.innerText = "Play Again";
+                notificationButton.innerText = "Winner: Player Two!";
+            }
         }
     });
-        const spotSeven = document.getElementById('o-seven');
+        const spotSeven = document.getElementById('seven');
         spotSeven.addEventListener('click', function () {
         if (spotSeven.style.opacity > 0.9) {
             return;
@@ -272,15 +288,18 @@ document.addEventListener('DOMContentLoaded', function() {
         spotSeven.style.opacity = 1;
         switchPlayer();
         notificationButton.innerText = `Turn: Player ${currentPlayer}`
-        } else if (determineWinningMoves() === 1) {
-            startButton.innerText = "Play Again";
-            notificationButton.innerText = "Winner: Player One!";
-        } else if (determineWinningMoves() === 2) {
-            startButton.innerText = "Play Again";
-            notificationButton.innerText = "Winner: Player Two!";
+        } else if (isWinner()) { 
+            if (determineWinningMoves() === 1) {
+                startButton.innerText = "Play Again";
+                notificationButton.innerText = "Winner: Player One!";
+            } else if (determineWinningMoves() === 2) {
+                // If player 1 has won, announce they won and change text accordingly.
+                startButton.innerText = "Play Again";
+                notificationButton.innerText = "Winner: Player Two!";
+            }
         }
     });
-        const spotEight = document.getElementById('o-eight');
+        const spotEight = document.getElementById('eight');
         spotEight.addEventListener('click', function () {
         if (spotEight.style.opacity > 0.9) {
             return;
@@ -294,15 +313,18 @@ document.addEventListener('DOMContentLoaded', function() {
         spotEight.style.opacity = 1;
         switchPlayer();
         notificationButton.innerText = `Turn: Player ${currentPlayer}`
-        } else if (determineWinningMoves() === 1) {
-            startButton.innerText = "Play Again";
-            notificationButton.innerText = "Winner: Player One!";
-        } else if (determineWinningMoves() === 2) {
-            startButton.innerText = "Play Again";
-            notificationButton.innerText = "Winner: Player Two!";
+        } else if (isWinner()) { 
+            if (determineWinningMoves() === 1) {
+                startButton.innerText = "Play Again";
+                notificationButton.innerText = "Winner: Player One!";
+            } else if (determineWinningMoves() === 2) {
+                // If player 1 has won, announce they won and change text accordingly.
+                startButton.innerText = "Play Again";
+                notificationButton.innerText = "Winner: Player Two!";
+            }
         }
     });
-        const spotNine = document.getElementById('o-nine');
+        const spotNine = document.getElementById('nine');
         spotNine.addEventListener('click', function () {
         if (spotNine.style.opacity > 0.9) {
             return;
@@ -316,12 +338,15 @@ document.addEventListener('DOMContentLoaded', function() {
         spotNine.style.opacity = 1;
         switchPlayer();
         notificationButton.innerText = `Turn: Player ${currentPlayer}`
-        } else if (determineWinningMoves() === 1) {
-            startButton.innerText = "Play Again";
-            notificationButton.innerText = "Winner: Player One!";
-        } else if (determineWinningMoves() === 2) {
-            startButton.innerText = "Play Again";
-            notificationButton.innerText = "Winner: Player Two!";
+        } else if (isWinner()) { 
+            if (determineWinningMoves() === 1) {
+                startButton.innerText = "Play Again";
+                notificationButton.innerText = "Winner: Player One!";
+            } else if (determineWinningMoves() === 2) {
+                // If player 1 has won, announce they won and change text accordingly.
+                startButton.innerText = "Play Again";
+                notificationButton.innerText = "Winner: Player Two!";
+            }
         }
     });
 });
