@@ -51,10 +51,18 @@ h2 {
     border-radius: 50px;
     aspect-ratio: 1;
 }
-.board-item img {
-
+#board-item-img {
+    width: 45vw;
+    height: 45vh;
+    border-radius: 35px;
 }
-
+#spot-one {
+    position: absolute;
+    grid-column: 1 / 1;
+    grid-row: 2 / 5;
+    width: 15vw;
+    height: 15vh;
+}
 footer {
     margin: 0;
     padding: 0;
