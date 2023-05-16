@@ -17,7 +17,7 @@ body {
 }
 .nav-items {
     background-image: linear-gradient(to top, darkred, #1a1818);
-
+    border-bottom: #7a3131 solid 0.05em;
 
     margin-top: 0px;
     text-align: center;

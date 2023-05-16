@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         spotSeven.style.opacity = 0.001;
         spotEight.style.opacity = 0.001;
         spotNine.style.opacity = 0.001;
-        
+
 
     }
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         0 1 2
         3 4 5
         6 7 8
-        
+
         board[] array is +1 to element objects
      */
         if (spotOne.src === "./X.png" && spotTwo.src === "./X.png" && spotThree.src === "./X.png") {
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
         switchPlayer();
         notificationButton.innerText = `Turn: Player ${currentPlayer}`;
         // If player 1 has won, announce they won and change text accordingly.
-        } else if (isWinner()) { 
+        } else if (isWinner()) {
             if (determineWinningMoves() === 1) {
                 startButton.innerText = "Play Again";
                 notificationButton.innerText = "Winner: Player One!";
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
         spotTwo.style.opacity = 1;
         switchPlayer();
         notificationButton.innerText = `Turn: Player ${currentPlayer}`
-        } else if (isWinner()) { 
+        } else if (isWinner()) {
             if (determineWinningMoves() === 1) {
                 startButton.innerText = "Play Again";
                 notificationButton.innerText = "Winner: Player One!";
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
         spotThree.style.opacity = 1;
         switchPlayer();
         notificationButton.innerText = `Turn: Player ${currentPlayer}`
-        } else if (isWinner()) { 
+        } else if (isWinner()) {
             if (determineWinningMoves() === 1) {
                 startButton.innerText = "Play Again";
                 notificationButton.innerText = "Winner: Player One!";
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
         spotFour.style.opacity = 1;
         switchPlayer();
         notificationButton.innerText = `Turn: Player ${currentPlayer}`
-        } else if (isWinner()) { 
+        } else if (isWinner()) {
             if (determineWinningMoves() === 1) {
                 startButton.innerText = "Play Again";
                 notificationButton.innerText = "Winner: Player One!";
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
         spotFive.style.opacity = 1;
         switchPlayer();
         notificationButton.innerText = `Turn: Player ${currentPlayer}`
-        } else if (isWinner()) { 
+        } else if (isWinner()) {
             if (determineWinningMoves() === 1) {
                 startButton.innerText = "Play Again";
                 notificationButton.innerText = "Winner: Player One!";
@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
         spotSix.style.opacity = 1;
         switchPlayer();
         notificationButton.innerText = `Turn: Player ${currentPlayer}`
-        } else if (isWinner()) { 
+        } else if (isWinner()) {
             if (determineWinningMoves() === 1) {
                 startButton.innerText = "Play Again";
                 notificationButton.innerText = "Winner: Player One!";
@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function() {
         spotSeven.style.opacity = 1;
         switchPlayer();
         notificationButton.innerText = `Turn: Player ${currentPlayer}`
-        } else if (isWinner()) { 
+        } else if (isWinner()) {
             if (determineWinningMoves() === 1) {
                 startButton.innerText = "Play Again";
                 notificationButton.innerText = "Winner: Player One!";
@@ -313,7 +313,7 @@ document.addEventListener('DOMContentLoaded', function() {
         spotEight.style.opacity = 1;
         switchPlayer();
         notificationButton.innerText = `Turn: Player ${currentPlayer}`
-        } else if (isWinner()) { 
+        } else if (isWinner()) {
             if (determineWinningMoves() === 1) {
                 startButton.innerText = "Play Again";
                 notificationButton.innerText = "Winner: Player One!";
@@ -338,7 +338,7 @@ document.addEventListener('DOMContentLoaded', function() {
         spotNine.style.opacity = 1;
         switchPlayer();
         notificationButton.innerText = `Turn: Player ${currentPlayer}`
-        } else if (isWinner()) { 
+        } else if (isWinner()) {
             if (determineWinningMoves() === 1) {
                 startButton.innerText = "Play Again";
                 notificationButton.innerText = "Winner: Player One!";
