@@ -19,8 +19,8 @@
 <img id="falcon" alt="falcon-logo" src="DT%20Logo%205.png">
 
 <header>
-    <button><h2 id="start-button">Start Game</h2></button>
-    <h2 id="announcement">Turn: Player 1</h2>
+    <button onclick="startGame()"><h2  id="start-button">Start Game</h2></button>
+    <button class="turn"><h2 id="announcement">Turn: Player 1</h2></button>
 </header>
 <h1>UWRF Development Team - Games:</h1>
 <h2>Tic-Tac-Toe</h2>
@@ -33,21 +33,20 @@
     <img src="Tic-Tac-Toe-Game-Template.webp" usemap="#image-map">
 
      <map name="image-map" id="image-map">
-       <area id="box" alt="square1" class="square1"  coords="39,41,203,220" shape="rect">
-       <area id="box" alt="square2" class="square2"  coords="217,43,363,221" shape="rect">
-       <area id="box" alt="square3" class="square3"  coords="379,44,528,220" shape="rect">
-       <area id="box" alt="square4" class="square4"  coords="42,234,202,410" shape="rect">
-       <area id="box" alt="square5" class="square5"  coords="212,230,366,413" shape="rect">
-       <area id="box" alt="square6" class="square6"  coords="377,234,531,412" shape="rect">
-       <area id="box" alt="square7" class="square7"  coords="41,423,203,605" shape="rect">
-       <area id="box" alt="square8" class="square8"  coords="215,424,364,604" shape="rect">
-       <area id="box" alt="square9" class="square9"  coords="376,422,532,602" shape="rect">
+      <div id="box"> <area id="square1" alt="square1" class="square1" coords="39,41,203,220" shape="rect"></div>
+      <div id="box"><area id="square2" alt="square2" class="square2"  coords="217,43,363,221" shape="rect"></div>
+      <div id="box"><area id="square3" alt="square3" class="square3"  coords="379,44,528,220" shape="rect"></div>
+      <div id="box"><area id="square4" alt="square4" class="square4"  coords="42,234,202,410" shape="rect"></div>
+      <div id="box"><area id="square5" alt="square5" class="square5"  coords="212,230,366,413" shape="rect"></div>
+      <div id="box"><area id="square6" alt="square6" class="square6"  coords="377,234,531,412" shape="rect"></div>
+      <div id="box"><area id="square7" alt="square7" class="square7"  coords="41,423,203,605" shape="rect"></div>
+      <div id="box"><area id="square8" alt="square8" class="square8"  coords="215,424,364,604" shape="rect"></div>
+      <div id="box"><area id="square9" alt="square9" class="square9"  coords="376,422,532,602" shape="rect"></div>
     </map>
     </div>
 
 </div>
 
 </body>
-
 
 </html>

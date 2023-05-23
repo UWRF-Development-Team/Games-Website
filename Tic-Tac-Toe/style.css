@@ -48,6 +48,16 @@ header {
     display: flex;
     justify-content: center;
 }
+
+button.turn{
+    border:5px solid black;
+    shape-image-threshold: inherit;
+    flex-direction: inherit;
+    font-weight: bold;
+    height: 300px;
+    width: 300px;
+}
+
 button {
     font-family: "Bodoni MT", serif;
     padding: 10px 50px;
@@ -66,7 +76,7 @@ button {
 }
 #board-img {
     border: darkred 15px dashed;
-    border-radius: 50px;
+    border-radius: 0px;
     -webkit-user-drag: none;
     background-image: url("DT Logo 5.png");
 }

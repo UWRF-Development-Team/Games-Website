@@ -19,6 +19,7 @@ when a user plays the game. */
 // boxMap.set(document.getElementById('8'), 8)
 // boxMap.set(document.getElementById('9'), 9)
 let boxes = Array.from(document.getElementById('box'));
+//let boxes = $('box').map(() => {return this.id;}).get();
 let emptyArray = Array(9).fill(null);//fill with 9 values
 
 const picX = document.getElementById("picX");
@@ -32,8 +33,10 @@ let currentPlayer = playerX; //the first player by default is player x.
 spotX.src = "./X.png";
 spotO.src = "./O.png"
 
-
-boxes.forEach(box => box.addEventListener('click', alertUser())); //listen for click, and alert user when a box is clicked
+function startGame() {
+  boxes.forEach(box => box.addEventListener('click', alertUser())); //listen for click, and alert user when a box is clicked
+ 
+}
 
 
 function alertUser() { alert("The event listener works!")}
