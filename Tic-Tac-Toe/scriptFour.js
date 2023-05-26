@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     let OSrc = "O.png";
     let XSrc = "X.png";
-    let button = document.getElementById("start-button");
+    let startButton = document.getElementById("start-button");
     let notificationButton = document.getElementById("announcement")
     let spotOne = document.getElementById("one");
     let spotTwo = document.getElementById("two");
@@ -16,9 +16,9 @@ document.addEventListener("DOMContentLoaded", function() {
     let boardSrc = [spotOne.src, spotTwo.src, spotThree.src, spotFour.src, spotFive.src, spotSix.src, spotSeven.src, spotEight.src, spotNine.src];
     let currentPlayer = 1;
     function switchPlayer() {
-        currentPlayer = currentPlayer == 1? 2: 1;
+        currentPlayer = currentPlayer === 1? 2: 1;
     }
-    
+
     function resetBoard() {
     board.forEach(item => {
         item.style.opacity = 0.001;
@@ -105,7 +105,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         return 0;
     }
-    button.addEventListener("click", resetBoard);
+
+    startButton.addEventListener("click", resetBoard);
     function makeMove() {
         if (parseFloat(this.style.opacity) > 0.9) {
             return;
@@ -120,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let winner = determineWinningMoves();
             console.log(winner);
             if (winner === 1) {
-                button.innerText = "Play Again";
+                startButton.innerText = "Play Again";
                 notificationButton.innerText = "Winner: Player One!";
                 console.log("point 1");
             } else if (winner === 2) {
