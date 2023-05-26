@@ -16,12 +16,9 @@ document.addEventListener("DOMContentLoaded", function() {
     let boardSrc = [spotOne.src, spotTwo.src, spotThree.src, spotFour.src, spotFive.src, spotSix.src, spotSeven.src, spotEight.src, spotNine.src];
     let currentPlayer = 1;
     function switchPlayer() {
-        if (currentPlayer === 1) {
-            currentPlayer = 2;
-        } else if (currentPlayer === 2) {
-            currentPlayer = 1;
-        }
+        currentPlayer = currentPlayer == 1? 2: 1;
     }
+    
     function resetBoard() {
     board.forEach(item => {
         item.style.opacity = 0.001;
