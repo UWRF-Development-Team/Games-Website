@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", function() {
     let OSrc = "O.png";
     let XSrc = "X.png";
@@ -15,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let board = [spotOne, spotTwo, spotThree, spotFour, spotFive, spotSix, spotSeven, spotEight, spotNine];
     let boardSrc = [spotOne.src, spotTwo.src, spotThree.src, spotFour.src, spotFive.src, spotSix.src, spotSeven.src, spotEight.src, spotNine.src];
     let currentPlayer = 1;
+
     function switchPlayer() {
         if (currentPlayer === 1) {
             currentPlayer = 2;
@@ -35,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
         1 2 3
         4 5 6
         7 8 9
-
+        
 
         board[] array is +1 to element objects
      */
@@ -119,14 +122,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 this.src = OSrc;
             }
             console.log(this.src);
+            
             this.style.opacity = 0.99;
+            
             let winner = determineWinningMoves();
             console.log(winner);
-            if (winner === 1) {
+            if (parseInt(winner) === 1) {
                 button.innerText = "Play Again";
                 notificationButton.innerText = "Winner: Player One!";
                 console.log("point 1");
-            } else if (winner === 2) {
+            } else if (parseInt(winner) === 2) {
                 // If player 1 has won, announce they won and change text accordingly.
                 button.innerText = "Play Again";
                 notificationButton.innerText = "Winner: Player Two!";
@@ -142,5 +147,22 @@ document.addEventListener("DOMContentLoaded", function() {
     board.forEach(item => {
         item.addEventListener('click', makeMove);
     });
+    function test() {
+        spotOne.src = OSrc;
+        spotTwo.src = OSrc;
+        spotThree.src = OSrc;
+        spotOne.style.opacity = 1;
+        spotTwo.style.opacity = 1;
+        spotThree.style.opacity = 1;
+        let winner = determineWinningMoves();
+        if (winner === 2) {
+            console.log("test passed");
+        } else {
+            console.log("test failed");
+        }
+    }
+    function test
+   // test();
 });
+// Add a test function which will set the spots of spotOne, spotTwo, and spotThree to O.png and then call determineWinningMoves() to see if it returns 2. If it does, then the function works. If it doesn't, then the function doesn't work.
 
