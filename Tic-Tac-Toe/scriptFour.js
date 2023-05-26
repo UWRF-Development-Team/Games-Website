@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let OSrc = "O.png";
     let XSrc = "X.png";
     let startButton = document.getElementById("start-button");
-    let notificationButton = document.getElementById("announcement")
+    let notificationButton = document.getElementById("announcement");
     let spotOne = document.getElementById("one");
     let spotTwo = document.getElementById("two");
     let spotThree = document.getElementById("three");
@@ -126,12 +126,12 @@ document.addEventListener("DOMContentLoaded", function() {
             let winner = determineWinningMoves();
             console.log(winner);
             if (winner === 1) {
-                button.innerText = "Play Again";
+                startButton.innerText = "Play Again";
                 notificationButton.innerText = "Winner: Player One!";
                 console.log("point 1");
             } else if (parseInt(winner) === 2) {
                 // If player 1 has won, announce they won and change text accordingly.
-                button.innerText = "Play Again";
+                startButton.innerText = "Play Again";
                 notificationButton.innerText = "Winner: Player Two!";
                 console.log("point 2");
             } else if (winner === 0) {
@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log("test failed");
         }
     }
-    function test
+   // function test
    // test();
 });
 // Add a test function which will set the spots of spotOne, spotTwo, and spotThree to O.png and then call determineWinningMoves() to see if it returns 2. If it does, then the function works. If it doesn't, then the function doesn't work.
