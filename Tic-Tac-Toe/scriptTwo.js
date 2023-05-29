@@ -4,21 +4,8 @@ when a user plays the game. */
 
 
 
-
-
-
-//let boxes = [1,2,3,4,5,6,7,8,9];
-// const boxMap = new Map();
-// boxMap.set(document.getElementById('1'), 1) //map that has a key equal to the id of the image map, and value with its square number
-// boxMap.set(document.getElementById('2'), 2)
-// boxMap.set(document.getElementById('3'), 3)
-// boxMap.set(document.getElementById('4'), 4)
-// boxMap.set(document.getElementById('5'), 5)
-// boxMap.set(document.getElementById('6'), 6)
-// boxMap.set(document.getElementById('7'), 7)
-// boxMap.set(document.getElementById('8'), 8)
-// boxMap.set(document.getElementById('9'), 9)
-let boxes = Array.from(document.getElementById('box'));
+document.addEventListener("DOMContentLoaded", function() {
+let boxes = Array.from(document.getElementsByClassName('box'));
 //let boxes = $('box').map(() => {return this.id;}).get();
 let emptyArray = Array(9).fill(null);//fill with 9 values
 
@@ -30,16 +17,17 @@ let currentPlayer = playerX; //the first player by default is player x.
 
 //the following variable are subject to change, and are just meant to display on each spot
 
-spotX.src = "./X.png";
-spotO.src = "./O.png"
+spotX = "X.png";
+spotO = "O.png"
 
-function startGame() {
-  boxes.forEach(box => box.addEventListener('click', alertUser())); //listen for click, and alert user when a box is clicked
+
+  boxes.forEach(box => box.addEventListener('click', checkRound)); //listen for click
  
+
+function checkRound() {
+  this.src = currentPlayer === playerX? spotX: spotO;
 }
-
-
-function alertUser() { alert("The event listener works!")}
+//function alertUser() { alert("The event listener works!")}
 
      let checkWin = player => {
     //take player as parameter, check if it has 3 in a row, return
@@ -86,4 +74,4 @@ function alertUser() { alert("The event listener works!")}
     //     }
 
       
-
+    });
