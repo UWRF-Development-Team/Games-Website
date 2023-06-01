@@ -1,5 +1,6 @@
 /* This file deals with styling single page tic-tac-toe game*/
 body {
+    /*background-image: url("background.jpg");*/
     font-family: "Bodoni MT", serif;
     text-align: center;
     width: 1000px;
@@ -12,7 +13,7 @@ body {
     color: cornsilk;
 }
 nav {
-    background-color: #2a2626;
+    background-color: darkred;
     margin: 0;
     padding: 0;
     overflow: hidden;
