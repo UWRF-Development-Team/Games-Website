@@ -1,6 +1,13 @@
 /* This file deals with styling single page tic-tac-toe game*/
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 body {
-    /*background-image: url("background.jpg");*/
+    background-image: url("background.jpg");
+    background-size: cover;
     font-family: "Bodoni MT", serif;
     text-align: center;
     width: 1000px;
@@ -9,11 +16,12 @@ body {
     flex-wrap: wrap;
     /*background-image: url("Shiny Overlay (1).svg");*/
     /*background-repeat: space;*/
-    background-image: linear-gradient(to top, black,darkred);
+    /*background-image: linear-gradient(to top, black,darkred);*/
+
     color: cornsilk;
 }
 nav {
-    background-color: darkred;
+    background-color: #1a1818;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -22,16 +30,25 @@ nav {
     top: 0;
     height: 75px;
     width: 100%;
-    border: black 3px solid;
+    /*border: black 3px solid;*/
     color: cornsilk;
+    /*
+    logo in the top left of nav bar
+     */
+    box-shadow: 10px 5px 5px #1a1818;
 
 }
+
 ul {
     list-style-type: none;
-
+    align-items: center;
+    margin: 5px;
 }
 .nav-items {
     display: inline-flex;
+}
+.nav-items:hover {
+
 }
 li {
     padding: 0 150px;
@@ -45,7 +62,7 @@ h3 {
     font-size: 40px;
 }
 h4 {
-    font-size: 25px;
+    font-size: 30px;
 }
 header {
     display: flex;
