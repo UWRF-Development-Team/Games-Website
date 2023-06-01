@@ -17,42 +17,43 @@ document.addEventListener('DOMContentLoaded', function () {
     let spotSix = document.getElementById("six");
     let spotSeven = document.getElementById("seven");
     let spotEight = document.getElementById("eight");
-    let spotNine = document.getElementById("nine");
+    let spotNine = document.getElementById("nine"); //lines 11 - 21 can be reduced by added the classname to the array.
     let board = [spotOne, spotTwo, spotThree, spotFour, spotFive, spotSix, spotSeven, spotEight, spotNine];
     let currentPlayer  = 1;
-    for (let item of board) {
+    let isGoing = true; //variable to tell if the game is still going.
+
+    for (let item of board) { //display all items in board array
         console.log(item);
     }
-    console.log(O);
+
+    console.log(OSrc);//testing
     console.log(XSrc);
+
     for (let item of board) {
-        item.addEventListener("click", makeMove);
+        item.addEventListener("click", makeMove); //add event listener to all squares
     }
-    startButton.addEventListener("click", resetBoard);
-    function switchPlayer() {
-        if (currentPlayer === 1) {
-            currentPlayer = 2;
-        } else {
-            currentPlayer = 1;
-        }
+    startButton.addEventListener("click", resetBoard); //add event listener to start button
+
+    function switchPlayer() { //switch the current player
+        currentPlayer = currentPlayer === 1? 2: 1;
+        notificationButton.innerHTML = "Player " + currentPlayer + "'s turn";
     }
-    function freezeBoard() {
+
+    function freezeBoard() { //keep this, but add a method to freeze item after it's clicked
         for (let item of board) {
-            item.removeEventListener("click", makeMove);
+            item.removeEventListener("click", makeMove); //stop listening for clicks
         }
     }
-    function resetBoard() {
+
+
+    function resetBoard() { // taking away all values on board.
         notificationButton.innerText = "Player 1's turn";
         console.log("reset");
-        for (let item of board) {
-            item.src = "";
-            item.style.opacity = "0.001";
-            item.addEventListener("click", makeMove);
-        }
+        newRound();
     }
     
     function determineWinningMoves() {
-        /*
+        /* 
         0 1 2
         3 4 5
         6 7 8
@@ -67,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         }
+
         // Vertical win conditions
         for (let i = 0; i < 3; i++) {
             if (board[i].src === board[i + 3].src && board[i + 3].src === board[i + 6].src) {
@@ -77,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         }
+
         // Diagonal win conditions
         if (board[0].src === board[4].src && board[4].src === board[8].src) {
             if (board[0].src === XSrc) {
@@ -92,32 +95,39 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     }
+
 function checkForWin() {
         let winner = determineWinningMoves();
         if (winner === 1) {
             notificationButton.innerHTML = "Player 1 wins!";
             freezeBoard();
+
         } else if (winner === 2) {
             notificationButton.innerHTML = "Player 2 wins!";
             freezeBoard();
         }
     }
+
     function newRound() {
-        for (let item of board) {
+        for (let item of board) { //board is being cleared
+            item.src = "";
             item.style.opacity = "0.001";
             item.addEventListener("click", makeMove);
         }
     }
+
     function makeMove() {
-        if (this.style.opacity === "1") {
+        if (this.style.opacity === "1") { //spot is already taken
             return;
         } else {
             if (currentPlayer === 1) {
                 this.src = XSrc;
-                this.style.opacity = "1";
+                this.style.opacity = "1"; //display x on board
                 console.log('successful');
                 checkForWin();
-                switchPlayer();
+                switchPlayer();//maybe switch player if and only if the game is still going
+                //can create boolean variable
+
             } else {
                 this.src = OSrc;
                 this.style.opacity = "1";
