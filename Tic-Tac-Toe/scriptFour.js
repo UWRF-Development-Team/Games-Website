@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log("test failed");
         }
     }
-    function test
+
    // test();
 });
 // Add a test function which will set the spots of spotOne, spotTwo, and spotThree to O.png and then call determineWinningMoves() to see if it returns 2. If it does, then the function works. If it doesn't, then the function doesn't work.
