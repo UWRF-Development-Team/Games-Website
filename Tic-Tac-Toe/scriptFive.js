@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function switchPlayer() { //switch the current player
         currentPlayer = currentPlayer === 1? 2: 1;
-        notificationButton.innerHTML = "Player " + currentPlayer + "'s turn";
+        notificationButton.innerHTML = "Turn: Player " + currentPlayer;
     }
 
     function freezeBoard() { //keep this, but add a method to freeze item after it's clicked
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     function resetBoard() { // taking away all values on board.
-        notificationButton.innerText = "Player 1's turn";
+        notificationButton.innerText = "Turn: Player 1";
         console.log("reset");
         newRound();
     }
@@ -101,10 +101,12 @@ function checkForWin() {
         if (winner === 1) {
             notificationButton.innerHTML = "Player 1 wins!";
             freezeBoard();
+            isGoing = false;
 
         } else if (winner === 2) {
             notificationButton.innerHTML = "Player 2 wins!";
             freezeBoard();
+            isGoing = false;
         }
     }
 
@@ -125,14 +127,14 @@ function checkForWin() {
                 this.style.opacity = "1"; //display x on board
                 console.log('successful');
                 checkForWin();
-                switchPlayer();//maybe switch player if and only if the game is still going
+                if(isGoing) switchPlayer();//maybe switch player if and only if the game is still going
                 //can create boolean variable
 
             } else {
                 this.src = OSrc;
                 this.style.opacity = "1";
                 checkForWin();
-                switchPlayer();
+                if(isGoing) switchPlayer();
             }
         }
     }
