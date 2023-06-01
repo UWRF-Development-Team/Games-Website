@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(item);
     }
 
-    console.log(OSrc);//testing
+    console.log(OSrc); //testing
     console.log(XSrc);
 
     for (let item of board) {
@@ -42,12 +42,15 @@ document.addEventListener('DOMContentLoaded', function () {
     function freezeBoard() { //keep this, but add a method to freeze item after it's clicked
         for (let item of board) {
             item.removeEventListener("click", makeMove); //stop listening for clicks
+            
         }
     }
 
 
     function resetBoard() { // taking away all values on board.
         notificationButton.innerText = "Turn: Player 1";
+        isGoing = true;
+        currentPlayer = 1;
         console.log("reset");
         newRound();
     }
@@ -60,7 +63,8 @@ document.addEventListener('DOMContentLoaded', function () {
      */
         // Horizontal win conditions
         for (let i = 0; i < 9; i += 3) {
-            if (board[i].src === board[i + 1].src && board[i + 1].src === board[i + 2].src) {
+            if (board[i].src === board[i + 1].src && board[i + 1].src === board[i + 2].src
+            && board[i].style.opacity === "1" && board[i + 1].style.opacity === "1" && board[i + 2].style.opacity === "1") {
                 if (board[i].src === XSrc) {
                     return 1;
                 } else if (board[i].src === OSrc) {
@@ -71,7 +75,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Vertical win conditions
         for (let i = 0; i < 3; i++) {
-            if (board[i].src === board[i + 3].src && board[i + 3].src === board[i + 6].src) {
+            if (board[i].src === board[i + 3].src && board[i + 3].src === board[i + 6].src
+            && board[i].style.opacity === "1" && board[i + 3].style.opacity === "1" && board[i + 6].style.opacity === "1") {
                 if (board[i].src === XSrc) {
                     return 1;
                 } else if (board[i].src === OSrc) {
@@ -81,13 +86,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Diagonal win conditions
-        if (board[0].src === board[4].src && board[4].src === board[8].src) {
+        if (board[0].src === board[4].src && board[4].src === board[8].src
+        && board[0].style.opacity === "1" && board[4].style.opacity === "1" && board[8].style.opacity === "1") {
             if (board[0].src === XSrc) {
                 return 1;
             } else if (board[0].src === OSrc) {
                 return 2;
             }
-        } else if (board[2].src === board[4].src && board[4].src === board[6].src) {
+        } else if (board[2].src === board[4].src && board[4].src === board[6].src
+        && board[2].style.opacity === "1" && board[4].style.opacity === "1" && board[6].style.opacity === "1" ) {
             if (board[2].src === XSrc) {
                 return 1;
             } else if (board[2].src === OSrc) {
@@ -100,31 +107,38 @@ function checkForWin() {
         let winner = determineWinningMoves();
         if (winner === 1) {
             notificationButton.innerHTML = "Player 1 wins!";
+            startButton.innerHTML = "Play Again";
             freezeBoard();
             isGoing = false;
-
+            console.log("Player 1 wins!");
         } else if (winner === 2) {
             notificationButton.innerHTML = "Player 2 wins!";
+            startButton.innerHTML = "Play Again";
             freezeBoard();
             isGoing = false;
+            console.log("Player 2 wins!");
         }
     }
 
     function newRound() {
-        for (let item of board) { //board is being cleared
-            item.src = "";
-            item.style.opacity = "0.001";
+        currentPlayer = 1;
+        startButton.innerText = "Start Game";
+        isGoing = true;
+        for (let item of board) { // board is being cleared
+            item.src = XSrc;
+            item.style.opacity = "0";
             item.addEventListener("click", makeMove);
         }
     }
 
     function makeMove() {
-        if (this.style.opacity === "1") { //spot is already taken
+        if (this.style.opacity === "1") { // the spot is already taken
             return;
         } else {
             if (currentPlayer === 1) {
                 this.src = XSrc;
                 this.style.opacity = "1"; //display x on board
+                console.log(this);
                 console.log('successful');
                 checkForWin();
                 if(isGoing) switchPlayer();//maybe switch player if and only if the game is still going
@@ -133,6 +147,8 @@ function checkForWin() {
             } else {
                 this.src = OSrc;
                 this.style.opacity = "1";
+                console.log(this);
+                console.log('successful');
                 checkForWin();
                 if(isGoing) switchPlayer();
             }

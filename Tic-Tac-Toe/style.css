@@ -24,9 +24,11 @@ nav {
     width: 100%;
     border: black 3px solid;
     color: cornsilk;
+
 }
 ul {
     list-style-type: none;
+
 }
 .nav-items {
     display: inline-flex;
