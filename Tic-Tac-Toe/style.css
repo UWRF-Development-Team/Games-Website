@@ -1,12 +1,20 @@
 /* This file deals with styling single page tic-tac-toe game*/
+/*
+ - Better background
+ - Add logo to nav bar
+ - Stylize notification button
+ -
+
+
+
+ */
 html {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 body {
-    background-image: url("background.jpg");
+    background-image: url("images/background.jpg");
     background-size: cover;
     font-family: "Bodoni MT", serif;
     text-align: center;
@@ -65,7 +73,7 @@ h4 {
     font-size: 30px;
 }
 header {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
 }
 button {
@@ -85,10 +93,10 @@ button {
     transition: color 250ms ease 50ms;
 }
 #board-img {
-    border: darkred 15px dashed;
+    border: darkred 15px solid;
     border-radius: 50px;
     -webkit-user-drag: none;
-    background-image: url("DT Logo 5.png");
+    background-image: url("images/DT Logo 5.png");
 }
 #falcon {
     width: 40%;
@@ -99,6 +107,11 @@ button {
     margin-left: -350px;
     -webkit-user-drag: none;
 
+
+}
+#falcon-two {
+    width: 7.5%;
+    display: flex;
 
 }
 /*column styles*/
