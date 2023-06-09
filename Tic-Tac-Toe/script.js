@@ -1,257 +1,152 @@
-const {toInteger} = require("lodash");
-const prompt = require("prompt-sync") ({sigint: true});
-let board = new Array(9).fill(' ');
-let currentPlayer = 1;
-function resetBoard(board) {
-    for (let i = 0; i < board.length; i++) {
-        board[i] = ' ';
+document.addEventListener('DOMContentLoaded', function () {
+    // Image URL
+    const OSrc = "https://github.com/UWRF-Development-Team/Games-Website/blob/4e1b493e0f8263df59a733d7b9947867f0456d72/Tic-Tac-Toe/O.png?raw=true";
+    const XSrc = "https://github.com/UWRF-Development-Team/Games-Website/blob/4e1b493e0f8263df59a733d7b9947867f0456d72/Tic-Tac-Toe/X.png?raw=true";
+    const startButton = document.getElementById("start-button");
+    const notificationButton = document.getElementById("announcement");
+    let spotOne = document.getElementById("one");
+    let spotTwo = document.getElementById("two");
+    let spotThree = document.getElementById("three");
+    let spotFour = document.getElementById("four");
+    let spotFive = document.getElementById("five");
+    let spotSix = document.getElementById("six");
+    let spotSeven = document.getElementById("seven");
+    let spotEight = document.getElementById("eight");
+    let spotNine = document.getElementById("nine"); //lines 11 - 21 can be reduced by added the classname to the array.
+    let board = [spotOne, spotTwo, spotThree, spotFour, spotFive, spotSix, spotSeven, spotEight, spotNine];
+    let currentPlayer  = 1;
+    let isGoing = true; //variable to tell if the game is still going.
+    
+    function isDraw() {
+        let count = 0;
+        board.forEach(e => {if (e.style.opacity === '1') count++;});
+        return count === 9;
     }
-}
-function isTaken(spot) {
-    if (board[spot] === "1") {
-        return true;
-    } else if (board[spot] === "1") {
-        return true;
-    } else if (board[spot] === " ") {
-        return false;
+    function announceDraw() {
+        notificationButton.innerText = "Draw!";
+        freezeBoard();
+        isGoing = false;
+        startButton.innerText = "Play Again";
     }
-}
-function switchPlayer() {
-    if (currentPlayer === 1) {
-        currentPlayer = 2;
-    } else if (currentPlayer === 2) {
-        currentPlayer = 1;
+    
+    for (let item of board) {
+        item.addEventListener("click", makeMove); //add event listener to all squares
     }
-}
-function getCurrentPlayerSymbol() {
-    if (currentPlayer === 1) {
-        return "X";
-    } else {
-        return "O";
-    }
-}
-function makeMove(spot) {
-    let spotPlacementXO;
-    if (currentPlayer === 1) {
-        spotPlacementXO = 'X';
-    } else {
-        spotPlacementXO = 'O';
-    }
-    switch (spot) {
-        case "1":
-            board[0] = spotPlacementXO;
-            break;
-        case "2":
-            board[1] = spotPlacementXO;
-            break;
-        case "3":
-            board[2] = spotPlacementXO;
-            break;
-        case "4":
-            board[3] = spotPlacementXO;
-            break;
-        case "5":
-            board[4] = spotPlacementXO;
-            break;
-        case "6":
-            board[5] = spotPlacementXO;
-            break;
-        case "7":
-            board[6] = spotPlacementXO;
-            break;
-        case "8":
-            board[7] = spotPlacementXO;
-            break;
-        case "9":
-            board[8] = spotPlacementXO;
-            break;
-        default:
-            console.log(spot);
-            console.log("Error");
-            break;
-    }
-}
-function determineWinningMoves(board) {
-    console.log(typeof board);
-    /*
-    0 1 2
-    3 4 5
-    6 7 8
-     */
-    if (board[0] === "1" && board[1] === "1" && board[2] === "1") {
-        return 1;
-    } else if (board[4] === "1" && board[5] === "1" && board[6] === "1") {
-        return 1;
-    } else if (board[6] === "1" && board[7] === "1" && board[8] === "1") {
-        return 1;
-    } else if (board[0] === "1" && board[3] === "1" && board[6] === "1") {
-        return 1;
-    } else if (board[1] === "1" && board[4] === "1" && board[7] === "1") {
-        return 1;
-    } else if (board[2] === "1" && board[5] === "1" && board[8] === "1") {
-        return 1;
-    } else if (board[0] === "1" && board[4] === "1" && board[8] === "1") {
-        return 1;
-    } else if (board[6] === "1" && board[4] === "1" && board[2] === "1") {
-        return 1;
-    } else if (board[0] === "2" && board[1] === "2" && board[2] === "2") {
-        return 2;
-    } else if (board[4] === "2" && board[5] === "2" && board[6] === "2") {
-        return 2;
-    } else if (board[6] === "2" && board[7] === "2" && board[8] === "2") {
-        return 2;
-    } else if (board[0] === "2" && board[3] === "2" && board[6] === "2") {
-        return 2;
-    } else if (board[1] === "2" && board[4] === "2" && board[7] === "2") {
-        return 2;
-    } else if (board[2] === "2" && board[5] === "2" && board[8] === "2") {
-        return 2;
-    } else if (board[0] === "2" && board[4] === "2" && board[8] === "2") {
-        return 2;
-    } else if (board[6] === "2" && board[4] === "2" && board[2] === "2") {
-        return 2;
-    } else {
-        return 0;
-    }
-}
-function isWinner() {
-    if (determineWinningMoves(board) === 0) {
-        return false;
-    } else if (determineWinningMoves(board) === 1) {
-        console.log("Congratulations Player 1 (X) -- You are the winner!")
-        return true;
-    } else if (determineWinningMoves(board) === 2) {
-        console.log("Congratulations Player 2 (O) -- You are the winner!")
-        return true;
-    }
-}
-function displayBoard() {
-    console.log("Current Board ------");
-    console.log("\n              " + "------");
-    console.log("              " + board[0] +"|" + board[1] + "|" + board[2]);
-    console.log("              " + "------");
-    console.log("              " + board[3] +"|" + board[4] + "|" + board[5]);
-    console.log("              " + "------");
-    console.log("              " + board[6] +"|" + board[7] + "|" + board[8]);
-    console.log("              " + "------");
-    console.log("\n--------------------");
+    startButton.addEventListener("click", resetBoard); //add event listener to start button
 
-}
-function isDraw() {
-    let isBoardFilled = false;
-    for (let i = 0; i < board.length; i++) {
-        if (board[i] === ' ') {
-            return false;
-        } else if (determineWinningMoves(board) === 1 || determineWinningMoves(board) === 2) {
-            return false;
+    function switchPlayer() { //switch the current player
+        currentPlayer = currentPlayer === 1? 2: 1;
+        notificationButton.innerHTML = "Turn: Player " + currentPlayer;
+    }
+
+    function freezeBoard() { //keep this, but add a method to freeze item after it's clicked
+        for (let item of board) {
+            item.removeEventListener("click", makeMove); //stop listening for clicks
         }
     }
-}
-function takeTurn() {
-    let hasWinner = false;
-    while (!hasWinner) {
-        console.log("\n")
-        console.log("Board Slots --------");
-        console.log("\n              ------");
-        console.log("              1|2|3");
-        console.log("              ------");
-        console.log("              4|5|6");
-        console.log("              ------");
-        console.log("              7|8|9");
-        console.log("              ------");
-        console.log("\n--------------------");
-        let userInput = prompt(`Player ${currentPlayer} (${getCurrentPlayerSymbol()}), please choose a spot: `);
-        if (isTaken(userInput)) {
-            console.log('You cannot use that spot.');
-            displayBoard(board);
-        } else {
-            makeMove(userInput);
-            hasWinner = isWinner();
-            if (!hasWinner) {
-                switchPlayer();
-                displayBoard(board);
+    
+    function resetBoard() { // taking away all values on board.
+        notificationButton.innerText = "Turn: Player 1";
+        isGoing = true;
+        currentPlayer = 1;
+        newRound();
+    }
+    
+    function determineWinningMoves() {
+        /* 
+        0 1 2
+        3 4 5
+        6 7 8
+     */
+        // Horizontal win conditions
+        for (let i = 0; i < 9; i += 3) {
+            if (board[i].src === board[i + 1].src && board[i + 1].src === board[i + 2].src
+            && board[i].style.opacity === "1" && board[i + 1].style.opacity === "1" && board[i + 2].style.opacity === "1") {
+                if (board[i].src === XSrc) {
+                    return 1;
+                } else if (board[i].src === OSrc) {
+                    return 2;
+                }
+            }
+        }
+
+        // Vertical win conditions
+        for (let i = 0; i < 3; i++) {
+            if (board[i].src === board[i + 3].src && board[i + 3].src === board[i + 6].src
+            && board[i].style.opacity === "1" && board[i + 3].style.opacity === "1" && board[i + 6].style.opacity === "1") {
+                if (board[i].src === XSrc) {
+                    return 1;
+                } else if (board[i].src === OSrc) {
+                    return 2;
+                }
+            }
+        }
+
+        // Diagonal win conditions
+        if (board[0].src === board[4].src && board[4].src === board[8].src
+        && board[0].style.opacity === "1" && board[4].style.opacity === "1" && board[8].style.opacity === "1") {
+            if (board[0].src === XSrc) {
+                return 1;
+            } else if (board[0].src === OSrc) {
+                return 2;
+            }
+        } else if (board[2].src === board[4].src && board[4].src === board[6].src
+        && board[2].style.opacity === "1" && board[4].style.opacity === "1" && board[6].style.opacity === "1" ) {
+            if (board[2].src === XSrc) {
+                return 1;
+            } else if (board[2].src === OSrc) {
+                return 2;
             }
         }
     }
-}
-function startGame() {
-    takeTurn();
-}
-startGame();
 
+function checkForWin() {
+        let winner = determineWinningMoves();
+        let draw = isDraw();
+        if (winner === 1) {
+            notificationButton.innerHTML = "Player 1 wins!";
+            startButton.innerHTML = "Play Again";
+            freezeBoard();
+            isGoing = false;
+        } else if (winner === 2) {
+            notificationButton.innerHTML = "Player 2 wins!";
+            startButton.innerHTML = "Play Again";
+            freezeBoard();
+            isGoing = false;
+        } else if (draw) {
+            announceDraw();
+        }
+    }
 
+    function newRound() {
+        currentPlayer = 1;
+        startButton.innerText = "Start Game";
+        isGoing = true;
+        for (let item of board) { // board is being cleared
+            item.src = XSrc;
+            item.style.opacity = "0";
+            item.addEventListener("click", makeMove);
+        }
+    }
 
+    function makeMove() {
+        if (this.style.opacity === "1") { // the spot is already taken
+            return;
+        } else {
+            if (currentPlayer === 1) {
+                this.src = XSrc;
+                this.style.opacity = "1"; //display x on board
+                checkForWin();
+                if(isGoing) switchPlayer();//maybe switch player if and only if the game is still going
+                //can create boolean variable
 
-// document.addEventListener('DOMContentLoaded',function() {
-//     /* Load the functions when the page loads */
-//
-//     function clearBoard() {
-//         let boards = document.getElementsByClassName('board-container');
-//         for (let board of boards) {
-//             board.style.opacity = 0.0001;
-//         }
-//         //now that the start button was pressed, we will add event listeners to each
-//         //individual div element. thier value will be passed to a function, and stored
-//         //in the empty array if the spot is null
-//         boxes.forEach(box => box.addEventListener('click', chosenSpot))
-//     }
-//     function unclearBoard() {
-//         let boards = document.getElementsByClassName('board-container');
-//         for (let board of boards) {
-//             board.style.opacity = 1;
-//         }
-//     }
-//     function switchPlayer() {
-//         let changePlayerButton = document.getElementById("start-button");
-//         let playerText = document.getElementById("player");
-//         if (playerText.innerText === "Player 1") {
-//
-//         }
-//
-//     }
-//
-//     /* Add event listeners */
-//     const button = document.getElementById('start-button');
-//     button.addEventListener('click', clearBoard);
-//     button.addEventListener('mousedown', unclearBoard);
-//     //variables for each box, when they are clicked, an action will be performed
-//     const spotOne = document.getElementById('o-one');
-//     spotOne.addEventListener('click', function() {
-//         spotOne.style.opacity = 1;
-//     });
-//     const spotTwo =  document.getElementById('o-two');
-//     spotTwo.addEventListener('click', function() {
-//         spotTwo.style.opacity = 1;
-//     });
-//     const spotThree = document.getElementById('o-three');
-//     spotThree.addEventListener('click', function() {
-//         spotThree.style.opacity = 1;
-//     });
-//     const spotFour =  document.getElementById('o-four');
-//     spotFour.addEventListener('click', function() {
-//         spotFour.style.opacity = 1;
-//     });
-//     const spotFive = document.getElementById('o-five');
-//     spotFive.addEventListener('click', function() {
-//         spotFive.style.opacity = 1;
-//     });
-//     const spotSix =  document.getElementById('o-six');
-//     spotSix.addEventListener('click', function() {
-//         spotSix.style.opacity = 1;
-//     });
-//     const spotSeven = document.getElementById('o-seven');
-//     spotSeven.addEventListener('click', function() {
-//         spotSeven.style.opacity = 1;
-//     });
-//     const spotEight =  document.getElementById('o-eight');
-//     spotEight.addEventListener('click', function() {
-//         spotEight.style.opacity = 1;
-//     });
-//     const spotNine = document.getElementById('o-nine');
-//     spotNine.addEventListener('click', function() {
-//         spotNine.style.opacity = 1;
-//     });
-//
-// /* switching the picture to other player picture when player switches */
-// });
-//
+            } else {
+                this.src = OSrc;
+                this.style.opacity = "1";
+                checkForWin();
+                if(isGoing) switchPlayer();
+            }
+        }
+    }
+
+});

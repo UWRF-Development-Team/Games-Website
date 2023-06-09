@@ -14,7 +14,7 @@ html {
     align-items: center;
 }
 body {
-    background-image: url("images/background.jpg");
+    background-image: url("images/sky.jpg");
     background-size: cover;
     font-family: "Bodoni MT", serif;
     text-align: center;
@@ -73,7 +73,8 @@ h4 {
     font-size: 30px;
 }
 header {
-    display: inline-flex;
+    margin-top: 20%;
+    display:inline-block;
     justify-content: center;
 }
 button {
