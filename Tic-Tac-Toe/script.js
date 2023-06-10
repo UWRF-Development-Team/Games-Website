@@ -138,7 +138,7 @@ function checkForWin() {
                 this.style.opacity = "1"; //display x on board
                 checkForWin();
                 if(isGoing) switchPlayer();//maybe switch player if and only if the game is still going
-                //can create boolean variable
+                
 
             } else {
                 this.src = OSrc;

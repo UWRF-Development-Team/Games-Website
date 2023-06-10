@@ -1,9 +1,7 @@
 /* This file deals with styling single page tic-tac-toe game*/
 /*
- - Better background
  - Add logo to nav bar
- - Stylize notification button
- -
+ 
 
 
 
@@ -38,31 +36,32 @@ nav {
     top: 0;
     height: 75px;
     width: 100%;
-    /*border: black 3px solid;*/
     color: cornsilk;
-    /*
-    logo in the top left of nav bar
-     */
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
     box-shadow: 10px 5px 5px #1a1818;
-
 }
 
 ul {
     list-style-type: none;
-    align-items: center;
-    margin: 5px;
+    margin: 0;
+    padding: 0;
+    display:flex;
+} li {
+    margin-top: 0, 10px;
 }
-.nav-items {
-    display: inline-flex;
+nav ul li.nav-items {
+    margin-right: 900px;
+    margin-left: 0px;
 }
 .nav-items:hover {
-
-}
-li {
-    padding: 0 150px;
-    margin-top: -20px;
+   color:aqua;
 }
 
+h1{
+    font-size: 80px;
+}
 h2 {
     font-size: 60px;
 }
@@ -77,21 +76,45 @@ header {
     display:inline-block;
     justify-content: center;
 }
-button {
-    font-family: "Bodoni MT", serif;
-    padding: 10px 50px;
-    border: crimson 5px solid;
-    border-radius: 100px;
-    background-color: darkred;
-    margin-top: 100px;
-}
-#start-button:hover {
-    cursor: pointer;
+
+#body-top{
+    margin-bottom: 3%;
 }
 
-#start-button:hover {
-    color: antiquewhite;
+button {
+    margin-top: 2%;
+    background: red;
+    color: black;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    margin-top: 100px;
+    font-family: 'Oswald', sans-serif;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #000;
+}
+
+#announcement {
+    background:none;
+    color:#1a1818;
+    border: none;
+    padding: 0;
+}
+
+button:hover {
+    cursor: pointer;
+    /*color: antiquewhite;*/
+    text-decoration: underline;
+    transition: 0.1s width linear;
     transition: color 250ms ease 50ms;
+    filter: brightness(150%);
+    box-shadow: 15px 15px 15px #000;
+}
+
+button:active {
+    box-shadow: inset 4px 4px 15px #000;
 }
 #board-img {
     border: darkred 15px solid;
