@@ -18,12 +18,7 @@ body {
     text-align: center;
     width: 1000px;
     height: 1500px;
-    /*background-image: linear-gradient(to right,ghostwhite,brown);*/
     flex-wrap: wrap;
-    /*background-image: url("Shiny Overlay (1).svg");*/
-    /*background-repeat: space;*/
-    /*background-image: linear-gradient(to top, black,darkred);*/
-
     color: cornsilk;
 }
 nav {
@@ -52,8 +47,13 @@ ul {
     margin-top: 0, 10px;
 }
 nav ul li.nav-items {
-    margin-right: 900px;
-    margin-left: 0px;
+    margin-right: 300px;
+    margin-left: 400px;
+    margin-top: 15px;
+}
+li.nav-items img#falcon-two{
+    width: 90px;
+    height: 90px;
 }
 .nav-items:hover {
    color:aqua;
