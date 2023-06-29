@@ -1,0 +1,42 @@
+nav {
+    background-color: #1a1818;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 75px;
+    width: 100%;
+    color: cornsilk;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 10px 5px 5px #1a1818;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display:flex;
+
+}
+
+nav ul li.nav-items {
+    margin-right: 300px;
+    margin-left: 400px;
+    margin-top: 15px;
+
+}
+li.nav-items img#falcon-two{
+    width: 90px;
+    height: 90px;
+}
+.nav-items:hover {
+   color:aqua;
+}
+
+#title {
+    white-space: nowrap;
+}

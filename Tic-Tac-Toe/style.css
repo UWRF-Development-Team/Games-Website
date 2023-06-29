@@ -32,10 +32,13 @@ nav {
     height: 75px;
     width: 100%;
     color: cornsilk;
-    display: flex; 
+    display: flex;
     align-items: center; 
     justify-content: space-between;
     box-shadow: 10px 5px 5px #1a1818;
+}
+.nav-items {
+
 }
 
 ul {
@@ -43,13 +46,19 @@ ul {
     margin: 0;
     padding: 0;
     display:flex;
-} li {
-    margin-top: 0, 10px;
+
+}
+li {
+    /*margin: 10px;*/
+}
+.nav-items {
+
 }
 nav ul li.nav-items {
     margin-right: 300px;
     margin-left: 400px;
     margin-top: 15px;
+
 }
 li.nav-items img#falcon-two{
     width: 90px;
@@ -57,6 +66,10 @@ li.nav-items img#falcon-two{
 }
 .nav-items:hover {
    color:aqua;
+}
+
+#title {
+    white-space: nowrap;
 }
 
 h1{
@@ -79,6 +92,11 @@ header {
 
 #body-top{
     margin-bottom: 3%;
+}
+#tic-tac-toe-title {
+    margin: 0;
+    padding: 0;
+    letter-spacing: 10px;
 }
 
 button {
@@ -113,6 +131,7 @@ button:hover {
     box-shadow: 15px 15px 15px #000;
 }
 
+
 button:active {
     box-shadow: inset 4px 4px 15px #000;
 }
@@ -133,10 +152,15 @@ button:active {
 
 
 }
+#start-button {
+    width: 22vw;
+}
 #falcon-two {
-    width: 7.5%;
+    width: 56px;
     display: flex;
-
+    border-radius: 20%;
+    margin-top: 10px;
+    margin-left: 5px;
 }
 /*column styles*/
 
