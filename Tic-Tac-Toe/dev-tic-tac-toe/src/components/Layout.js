@@ -6,7 +6,7 @@ export default function Layout() {
     const listItems = listTitles.map(item => <li className="nav-items" key={item}>{item}</li>);
 
     return (
-            <>
+         <>
             <nav>
                 <ul>{listItems}</ul>
             </nav>
