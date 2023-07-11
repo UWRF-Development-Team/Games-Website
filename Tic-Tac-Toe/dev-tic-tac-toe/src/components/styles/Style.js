@@ -166,7 +166,7 @@ const Title = {
     whiteSpace : "nowrap"
 }
 
-const Style = {
+const WebPage = {
     Html: Html,
     Body: Body,
     H1: H1,
@@ -175,14 +175,22 @@ const Style = {
     H4: H4,
     Header: Header,
     BodyTop: BodyTop,
+    Title: Title
+}
+
+const Style = {
+    WebPage: WebPage,
+
     TicTacToeTitle: TicTacToeTitle,
     Button: Button,
+    ButtonActive: ButtonActive,
+    StartButton: StartButton,
+
     Announcement: Announcement,
     AnnouncementHover: AnnouncementHover,
-    ButtonActive: ButtonActive,
+
     BoardImg: BoardImg,
     Falcon: Falcon,
-    StartButton: StartButton,
     FalconTwo: FalconTwo,
     BoardContainer: BoardContainer,
     BoardContainerHover: BoardContainerHover,
@@ -190,40 +198,41 @@ const Style = {
     Row1Row2Row3: Row1Row2Row3,
     XOneXTwoXThreeXFourXFiveXFiveXSixXSevenXEightXNine: XOneXTwoXThreeXFourXFiveXFiveXSixXSevenXEightXNine,
     OneTwoThreeFourFiveSixSevenEightNine: OneTwoThreeFourFiveSixSevenEightNine,
+
     Nav: Nav,
     Ul: Ul,
     NavUlLiNavItems: NavUlLiNavItems,
     LiNavItemsImgFalconTwo: LiNavItemsImgFalconTwo,
-    NavItemsHover: NavItemsHover,
-    Title: Title
+    NavItemsHover: NavItemsHover
 }
-export {Style};
-export {Html};
-export {Body};
-export {H1};
-export {H2};
-export {H3};
-export {H4};
-export {Header};
-export {BodyTop};
-export {TicTacToeTitle};
-export {Button};
-export {Announcement};
-export {AnnouncementHover};
-export {ButtonActive};
-export {BoardImg};
-export {Falcon};
-export {StartButton};
-export {FalconTwo};
-export {BoardContainer};
-export {BoardContainerHover};
-export {RedX};
-export {Row1Row2Row3};
-export {XOneXTwoXThreeXFourXFiveXFiveXSixXSevenXEightXNine};
-export {OneTwoThreeFourFiveSixSevenEightNine};
-export {Nav};
-export {Ul};
-export {NavUlLiNavItems};
-export {LiNavItemsImgFalconTwo};
-export {NavItemsHover};
-export {Title};
+
+export default {Style}; //should only have to make one export
+// export {Html};
+// export {Body};
+// export {H1};
+// export {H2};
+// export {H3};
+// export {H4};
+// export {Header};
+// export {BodyTop};
+// export {TicTacToeTitle};
+// export {Button};
+// export {Announcement};
+// export {AnnouncementHover};
+// export {ButtonActive};
+// export {BoardImg};
+// export {Falcon};
+// export {StartButton};
+// export {FalconTwo};
+// export {BoardContainer};
+// export {BoardContainerHover};
+// export {RedX};
+// export {Row1Row2Row3};
+// export {XOneXTwoXThreeXFourXFiveXFiveXSixXSevenXEightXNine};
+// export {OneTwoThreeFourFiveSixSevenEightNine};
+// export {Nav};
+// export {Ul};
+// export {NavUlLiNavItems};
+// export {LiNavItemsImgFalconTwo};
+// export {NavItemsHover};
+// export {Title};

@@ -1,4 +1,6 @@
 import gameBoard from "../images/Template.webp";
+import redO from "../images/O.png";
+import {Style} from "./styles/Style.js";
 export default function Board() {
     return (
         <div> 
@@ -6,15 +8,15 @@ export default function Board() {
 <div class="board-container">
 
     <div class="board">
-        <div class="row1"><img id="one" src="images/O.png" alt="red o"></img></div>
-        <div class="row1"><img id="two" src="images/O.png" alt="red o"></img></div>
-        <div class="row1"><img id="three" src="images/O.png" alt="red o"></img></div>
-        <div class="row2"><img id="four" src="images/O.png" alt="red o"></img></div>
-        <div class="row2"><img id="five" src="images/O.png" alt="red o"></img></div>
-        <div class="row2"><img id="six" src="images/O.png" alt="red o"></img></div>
-        <div class="row3"><img id="seven" src="images/O.png" alt="red o"></img></div>
-        <div class="row3"><img id="eight" src="images/O.png" alt="red o"></img></div>
-        <div class="row3"><img id="nine" src="images/O.png" alt="red o"></img></div>
+        <div class="row1"><img id="one" src={redO} alt="red o"></img></div>
+        <div class="row1"><img id="two" src={redO} alt="red o"></img></div>
+        <div class="row1"><img id="three" src={redO} alt="red o"></img></div>
+        <div class="row2"><img id="four" src={redO} alt="red o"></img></div>
+        <div class="row2"><img id="five" src={redO} alt="red o"></img></div>
+        <div class="row2"><img id="six" src={redO} alt="red o"></img></div>
+        <div class="row3"><img id="seven" src={redO} alt="red o"></img></div>
+        <div class="row3"><img id="eight" src={redO} alt="red o"></img></div>
+        <div class="row3"><img id="nine" src={redO} alt="red o"></img></div>
     </div>
 </div>
 </div>
