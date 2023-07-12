@@ -64,20 +64,6 @@ const Button = {
     boxShadow: "5px 5px 5px #000"
 };
 
-const Announcement = {
-    background: "none",
-    color: "#1a1818",
-    border: "none",
-    padding: "0"
-};
-
-const AnnouncementHover = {
-    cursor: "pointer",
-    textDecoration: "underline",
-    transition: "color 250ms ease 50ms",
-    filter: "brightness(150%)",
-    boxShadow: "15px 15px 15px #000"
-};
 
 const ButtonActive = {
     boxShadow: "inset 4px 4px 15px #000"
@@ -215,9 +201,7 @@ const Style =  {
     Button: Button,
     ButtonActive: ButtonActive,
     StartButton: StartButton,
-    Announcement: Announcement,
-    AnnouncementHover: AnnouncementHover,
-
+    
     BoardImg: BoardImg,
     Falcon: Falcon,
     FalconTwo: FalconTwo,
@@ -246,8 +230,6 @@ export {Header};
 export {BodyTop};
 export {TicTacToeTitle};
 export {Button};
-export {Announcement};
-export {AnnouncementHover};
 export {ButtonActive};
 export {BoardImg};
 export {Falcon};
