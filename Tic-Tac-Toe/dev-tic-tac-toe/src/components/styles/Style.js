@@ -206,17 +206,15 @@ const WebPage = {
     Title: Title
 };
 
-const WholeButtonStyle = {
-    Button: Button,
-    ButtonActive: ButtonActive,
-    StartButton: StartButton
-};
+
 
 const Style =  {
     WebPage: WebPage,
-
+    
     TicTacToeTitle: TicTacToeTitle,
-    WholeButtonStyle: WholeButtonStyle,
+    Button: Button,
+    ButtonActive: ButtonActive,
+    StartButton: StartButton,
     Announcement: Announcement,
     AnnouncementHover: AnnouncementHover,
 
@@ -268,4 +266,4 @@ export {LiNavItemsImgFalconTwo};
 export {NavItemsHover};
 export {Title};
 export {WebPage};
-export {WholeButtonStyle};
+
