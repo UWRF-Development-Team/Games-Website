@@ -7,10 +7,12 @@ import {Style} from "./components/styles/Style.js";
 
 function App() {
   return (
-    <div style={Style.WebPage}>
+    <div>
+
         <div>
             <Layout/>
         </div>
+        <div style={Style.WebPage.Body}>
     <div>
         <TitleAndButton/>
     </div>
@@ -20,6 +22,8 @@ function App() {
     <div>
       <Board/>
     </div>
+    </div>
+
     </div>
   );
 }

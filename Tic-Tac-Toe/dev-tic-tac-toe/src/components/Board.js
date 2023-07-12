@@ -1,6 +1,6 @@
 import gameBoard from "../images/Template.webp";
 import redO from "../images/O.png";
-import {Style} from "./styles/Style.js";
+import  "./styles/Board.css";
 export default function Board() {
     return (
         <div> 
