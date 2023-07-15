@@ -3,35 +3,43 @@ nav {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    position:absolute;
-    right: 0;
+    /*position:absolute;*/
+    left: 0;
     top: 0;
-    height: 75px;
+    height: 7vh;
     width: 100%;
     color: cornsilk;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
     /*box-shadow: 10px 5px 5px #1a1818;*/
 }
-
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display:flex;
+}
+nav {
 
 }
+ul.nav-items {
 
+
+}
+.nav-items ul li {
+    width: 5vw;
+}
 nav ul li.nav-items {
-    margin-right: 150px;
-    margin-left: 100px;
-    margin-top: 15px;
+    /*margin-right: 150px;*/
+    /*margin-left: 100px;*/
+    /*margin-top: 15px;*/
 
 }
 li.nav-items img#falcon-two{
-    width: 90px;
-    height: 90px;
+    /*width: 90px;*/
+    /*height: 90px;*/
+}
+#falcon-two {
+    width:100%;
+
 }
 .nav-items:hover {
    color:aqua;

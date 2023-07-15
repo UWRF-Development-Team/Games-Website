@@ -1,10 +1,8 @@
-
 const Html =  {
     display: "flex",
     justifyContent: "center",
     alignItems: "center"
 };
-
 const Body = {
     backgroundSize: "cover",
     fontFamily: "\"Bodoni MT\", serif",
@@ -12,6 +10,9 @@ const Body = {
     marginTop: "150px",
         /*width: "1000px",
     height: "1500px",*/
+    width: "100vw", /*Using viewport ensures the rendering is dynamic*/
+    height: "100vh",
+
     flexWrap: "wrap",
     flexGrow: "1",
     alignItems: "center",
