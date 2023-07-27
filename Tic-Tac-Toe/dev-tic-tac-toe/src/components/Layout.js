@@ -8,7 +8,7 @@ export default function Layout() {
     return (
          <>
             <nav>
-                <ul>{listItems}</ul>
+                <ul className={"nav-list"}>{listItems}</ul>
             </nav>
         </>
     );
