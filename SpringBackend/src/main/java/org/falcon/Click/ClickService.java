@@ -9,6 +9,6 @@ public class ClickService {
         this.printer = printer;
     }
     public void printClick(String source) {
-        printer.printClick(source);
+        this.printer.printClick(source);
     }
 }

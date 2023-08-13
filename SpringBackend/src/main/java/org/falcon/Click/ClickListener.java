@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ClickListener {
-    @EventListener
+    @EventListener(ClickEvent.class)
     public void handleEvent(ClickEvent event) {
         System.out.println("Click from: " + event.getSource() + " at: " + event.getTimestamp());
     }
