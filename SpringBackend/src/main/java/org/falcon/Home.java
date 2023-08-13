@@ -11,13 +11,13 @@ import java.util.Scanner;
 public class Home {
     @GetMapping("/")
     public String home()  {
-        File file = new File("C:\\Users\\olive\\GitHub\\Games-Website\\Tic-Tac-Toe\\index.html");
+        File file = new File("C:\\Users\\olive\\GitHub\\Games-Website\\SpringBackend\\src\\main\\resources\\static\\index.html");
         StringBuilder html = new StringBuilder();
         try (Scanner htmlReader = new Scanner(file)) {
             while (htmlReader.hasNextLine()) {
                 html.append(htmlReader.nextLine());
             }
-        }catch (FileNotFoundException ex) {
+        } catch (FileNotFoundException ex) {
             System.err.println(ex.getMessage());
         }
         return html.toString();
