@@ -1,25 +1,10 @@
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
-/*===========================-Overview-For-Spring-============================
- * RestController: A Spring MVC annotation that specializes in building APIs.
- * Component: A Spring annotation that marks a Java class as a building block.
- * Service: A Spring annotation that marks a Java class as a task provider.
- * EventListener: A Spring annotation that handles events in Spring.
- * RequestMapping: A Spring annotation that maps a URL to a method.
- * PathVariable: A Spring annotation that gets a variable from a URL.
- * RequestParam: A Spring annotation that gets a variable from a URL when a
- *               certain a certain type of request is received.
- * RequestBody: A Spring annotation that gets a variable from a request body.
- * RequestHeader: A Spring annotation that gets a variable from a request
- *                header.
- * ModelAttribute: A Spring annotation that gets a variable from a model.
- * SessionAttribute: A Spring annotation that gets a variable from a session.
- * CookieValue: A Spring annotation that gets a variable from a cookie.
-----------------------------------------------------------------------------*/
 /*===========================-Overview-For-Spring-============================
  * @SpringBootApplication: Starting point of the application.                |
  * - Class -------------------------------------------------------------------
@@ -51,6 +36,9 @@ import org.springframework.web.bind.annotation.*;
  * - Method, Parameter ------------------------------------------------------|
  * @CookieValue: Gets a variable from a cookie.                              |
  * - Method, Parameter ------------------------------------------------------|
+ * @Autowired: Automatically creates an object and passes it to a            |
+ *             constructor.                                                  |
+ * - Method, Parameter/Variable ---------------------------------------------|
 ----------------------------------------------------------------------------*/
 
 //===========================-Reference-For-Spring-===========================
@@ -263,5 +251,21 @@ public class DeveloperNotes {
      * a certain type of cookie has been received and has the capability to
      * trigger a response and pass a variable from the cookie to the method.
      * ---------------------------------------------------------------------*/
+    @Autowired
+    public DeveloperNotes() {}
+    /*--------------------------------Excerpt---------------------------------
+     * @Autowired is used to automatically create an object and pass it to a
+     * constructor. It's a way to tell Spring that this class should be
+     * automatically created and passed to the constructor. You should use
+     * @Autowired when you want to automatically create an object and pass it
+     * to a constructor. You may want an automatically created object when you
+     * want to use a class but don't want to manually create it. For example,
+     * you may want to use a class that connects to a database but manually
+     * creating it may have errors which compromise the security of the
+     * database. In this case, you can use @Autowired to automatically create
+     * the class and pass it to the constructor. In a general sense,
+     * @Autowired is like a mechanism that automatically creates an object and
+     * passes it to a constructor.
+     -----------------------------------------------------------------------*/
 
 }
