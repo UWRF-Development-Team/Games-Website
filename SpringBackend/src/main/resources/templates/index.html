@@ -6,47 +6,49 @@
     <meta charset="UTF-8">
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="../static/style.css"  th:href="@{/style.css}">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 </head>
 <body>
+<!--------------------------------Nav-Bar------------------------------------>
 <nav>
-    <img id="falcon-two" src="../static/images/logo6.png" alt="Logo">
-    <h3 id="title">UWRF Development Team</h3>
+    <img id="falcon-two" src="../static/images/logo6.png"
+         th:src="@{/images/logo6.png}" alt="falcon-logo">
     <ul>
-        <li class="nav-items"><h3> Home </h3> </li>
-        <li class="nav-items"><h3> Projects</h3></li>
-
+        <li class="nav-items"><h3>Home </h3> </li>
+        <li class="nav-items"><h3>Projects</h3></li>
+        <li class="nav-items"><h3>About Us</h3></li>
     </ul>
 </nav>
 <!--<img id="falcon" alt="falcon-logo" src="DT%20Logo%205.png">-->
-
+<!----------------------------Tic-Tac-Toe-Title------------------------------>
 <header>
     <h1 id="tic-tac-toe-title">Tic-Tac-Toe</h1>
-    <h2 id="tic-tac-toe-subtitle">A Game of Strategy</h2>
-    <h3 th:text="${message}"></h3>
+    <h3 id="title">by the UWRF Development Team</h3>
 </header>
 
 <div id="body-top">
-    <button><h2 id="start-button">Start Game</h2></button>
+    <h3>
+        <button>Start Game</button>
+    </h3>
     <h2 id="announcement">Turn: Player 1</h2>
 </div>
 
-<img id="board-img" alt="board" src="C:\Users\olive\GitHub\Games-Website\SpringBackend\src\main\resources\static\images\Tic-Tac-Toe-Game-Template.png">
+<img id="board-img" alt="board" src="../static/images/Tic-Tac-Toe-Game-Template.png"
+     th:src="@{/images/Tic-Tac-Toe-Game-Template.png}">
 <div class="board-container">
 
     <div class="board">
-        <div class="row1"><img id="one" src="../static/images/O.png" th:src="${imgPath}" alt="red o"></div>
-        <div class="row1"><img id="two" src="../static/images/O.png" alt="red o"></div>
-        <div class="row1"><img id="three" src="../static/images/O.png" alt="red o"></div>
-        <div class="row2"><img id="four" src="../static/images/O.png" alt="red o"></div>
-        <div class="row2"><img id="five" src="../static/images/O.png" alt="red o"></div>
-        <div class="row2"><img id="six" src="../static/images/O.png" alt="red o"></div>
-        <div class="row3"><img id="seven" src="../static/images/O.png" alt="red o"></div>
-        <div class="row3"><img id="eight" src="../static/images/O.png" alt="red o"></div>
-        <div class="row3"><img id="nine" src="../static/images/O.png" alt="red o"></div>
+        <div class="row1"><img th:src="@{/images/O.png}" id="one" src="../static/images/O.png"  alt="red o"></div>
+        <div class="row1"><img th:src="@{/images/O.png}" id="two" src="../static/images/O.png" alt="red o"></div>
+        <div class="row1"><img th:src="@{/images/O.png}" id="three" src="../static/images/O.png" alt="red o"></div>
+        <div class="row2"><img th:src="@{/images/O.png}" id="four" src="../static/images/O.png" alt="red o"></div>
+        <div class="row2"><img th:src="@{/images/O.png}" id="five" src="../static/images/O.png" alt="red o"></div>
+        <div class="row2"><img th:src="@{/images/O.png}" id="six" src="../static/images/O.png" alt="red o"></div>
+        <div class="row3"><img th:src="@{/images/O.png}" id="seven" src="../static/images/O.png" alt="red o"></div>
+        <div class="row3"><img th:src="@{/images/O.png}" id="eight" src="../static/images/O.png" alt="red o"></div>
+        <div class="row3"><img th:src="@{/images/O.png}" id="nine" src="../static/images/O.png" alt="red o"></div>
     </div>
 
 </div>

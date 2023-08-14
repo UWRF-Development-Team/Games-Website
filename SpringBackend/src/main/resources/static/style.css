@@ -16,10 +16,11 @@ body {
     background-size: cover;
     font-family: "Bodoni MT", serif;
     text-align: center;
-    width: 1000px;
-    height: 1500px;
+    width: 100vw;
+    height: 100vh;
     flex-wrap: wrap;
     color: cornsilk;
+    margin: 10vw 0 0 0;
 }
 nav {
     background-color: #1a1818;
@@ -29,7 +30,7 @@ nav {
     position: fixed;
     right: 0;
     top: 0;
-    height: 75px;
+    height: 7vw;
     width: 100%;
     color: cornsilk;
     display: flex;
@@ -43,10 +44,12 @@ nav {
 
 ul {
     list-style-type: none;
+    width: 100%;
     margin: 0;
     padding: 0;
     display:flex;
-
+    justify-content: space-evenly;
+    align-items: center;
 }
 li {
     /*margin: 10px;*/
@@ -55,15 +58,9 @@ li {
 
 }
 nav ul li.nav-items {
-    margin-right: 300px;
-    margin-left: 400px;
-    margin-top: 15px;
 
 }
-li.nav-items img#falcon-two{
-    width: 90px;
-    height: 90px;
-}
+
 .nav-items:hover {
    color:aqua;
 }
@@ -73,38 +70,51 @@ li.nav-items img#falcon-two{
 }
 
 h1{
-    font-size: 80px;
+    font-size: 6vw;
 }
 h2 {
-    font-size: 60px;
+    font-size: 4.8vw;
 }
 h3 {
-    font-size: 40px;
+    font-size: 3.35vw;
 }
 h4 {
-    font-size: 30px;
+    font-size: 3vw;
 }
 header {
-    margin-top: 20%;
-    display:inline-block;
+
+    display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #body-top{
-    margin-bottom: 3%;
+    margin: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 20vw;
 }
 #tic-tac-toe-title {
     margin: 0;
     padding: 0;
-    letter-spacing: 10px;
+    letter-spacing: 0.5vw;
 }
-
+h3 button {
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.5vw;
+    width: 30vw;
+    height: 18vw;
+}
 button {
-    margin-top: 2%;
+    text-align: center;
+    padding: 10vw 20vw;
     background: red;
     color: black;
     border: none;
-    padding: 0;
     font: inherit;
     cursor: pointer;
     outline: inherit;
@@ -112,6 +122,9 @@ button {
     font-family: 'Oswald', sans-serif;
     border-radius: 20px;
     box-shadow: 5px 5px 5px #000;
+    width: 20vw;
+    height: 20vw;
+    font-size: 5vw;
 }
 
 #announcement {
@@ -119,6 +132,7 @@ button {
     color:#1a1818;
     border: none;
     padding: 0;
+    margin: 0 0 5vw 0;
 }
 
 button:hover {
@@ -130,8 +144,6 @@ button:hover {
     filter: brightness(150%);
     box-shadow: 15px 15px 15px #000;
 }
-
-
 button:active {
     box-shadow: inset 4px 4px 15px #000;
 }
@@ -139,15 +151,15 @@ button:active {
     border: darkred 15px solid;
     border-radius: 50px;
     -webkit-user-drag: none;
-    background-image: url("images/Tic-Tac-Toe-Game-Template.png");
+    width: 50vw;
+    height: 50vw;
 }
 #falcon {
     width: 40%;
-    position: absolute;
+
     opacity: 25%;
     z-index: 0;
-    margin-top: 490px;
-    margin-left: -350px;
+
     -webkit-user-drag: none;
 
 
@@ -155,26 +167,33 @@ button:active {
 #start-button {
     width: 22vw;
 }
+
 #falcon-two {
-    width: 56px;
-    display: flex;
-    border-radius: 20%;
-    margin-top: 10px;
-    margin-left: 5px;
+    width: 4.5vw;
+    height: 4.5vw;
+    border-radius: 11%;
+    -webkit-user-drag: none;
+    margin-left: 0.9vw;
 }
 /*column styles*/
 
 /*table styles*/
 .board-container {
-    width: 600px;
-    height: 600px;
+    width: 55vw;
+    height: 55vw;
     align-content: center;
     z-index: 1;
     display: flex;
     justify-items: center;
     position: absolute;
-    margin-left: 175px;
-    margin-top: -660px;
+    top: 84%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-user-drag: none;
+
+
+
+
 }
 .board-container:hover {
     cursor: pointer;
@@ -191,8 +210,12 @@ button:active {
 }
 .row1, .row2, .row3 {
     display: inline-flex;
-    width: 25%;
-    padding: 5px 10px;
+    width: 23%;
+    height: 27%;
+    padding: 0.5vw;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
 
 }
 #x-one, #x-two, #x-three, #x-four, #x-five, #x-five, #x-six, #x-seven, #x-eight, #x-nine {
@@ -200,8 +223,10 @@ button:active {
 }
 #one, #two, #three, #four, #five, #six, #seven, #eight, #nine {
     z-index: 5;
-    width: 200px;
-    height: 200px;
+    width: 15vw;
+    height: 15vw;
+    margin: 0;
+    padding: 0;
     /*border: crimson 5px solid;*/
     opacity: 0.001;
     -webkit-user-drag: none;

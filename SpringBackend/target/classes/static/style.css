@@ -16,8 +16,8 @@ body {
     background-size: cover;
     font-family: "Bodoni MT", serif;
     text-align: center;
-    width: 1000px;
-    height: 1500px;
+    width: 100vw;
+    height: 100vh;
     flex-wrap: wrap;
     color: cornsilk;
 }
@@ -43,10 +43,12 @@ nav {
 
 ul {
     list-style-type: none;
+    width: 100%;
     margin: 0;
     padding: 0;
     display:flex;
-
+    justify-content: space-evenly;
+    align-items: center;
 }
 li {
     /*margin: 10px;*/
@@ -55,15 +57,9 @@ li {
 
 }
 nav ul li.nav-items {
-    margin-right: 300px;
-    margin-left: 400px;
-    margin-top: 15px;
 
 }
-li.nav-items img#falcon-two{
-    width: 90px;
-    height: 90px;
-}
+
 .nav-items:hover {
    color:aqua;
 }
@@ -86,8 +82,10 @@ h4 {
 }
 header {
     margin-top: 20%;
-    display:inline-block;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #body-top{
@@ -96,15 +94,15 @@ header {
 #tic-tac-toe-title {
     margin: 0;
     padding: 0;
-    letter-spacing: 10px;
+    letter-spacing: 0.5vw;
 }
 
 button {
-    margin-top: 2%;
+    text-align: center;
+    padding: 10vw 20vw;
     background: red;
     color: black;
     border: none;
-    padding: 0;
     font: inherit;
     cursor: pointer;
     outline: inherit;
@@ -112,6 +110,9 @@ button {
     font-family: 'Oswald', sans-serif;
     border-radius: 20px;
     box-shadow: 5px 5px 5px #000;
+    width: 10vw;
+    height: 5vw;
+    font-size: 5vw;
 }
 
 #announcement {
@@ -130,8 +131,6 @@ button:hover {
     filter: brightness(150%);
     box-shadow: 15px 15px 15px #000;
 }
-
-
 button:active {
     box-shadow: inset 4px 4px 15px #000;
 }
@@ -139,15 +138,13 @@ button:active {
     border: darkred 15px solid;
     border-radius: 50px;
     -webkit-user-drag: none;
-    background-image: url("images/Tic-Tac-Toe-Game-Template.png");
 }
 #falcon {
     width: 40%;
-    position: absolute;
+
     opacity: 25%;
     z-index: 0;
-    margin-top: 490px;
-    margin-left: -350px;
+
     -webkit-user-drag: none;
 
 
@@ -155,19 +152,20 @@ button:active {
 #start-button {
     width: 22vw;
 }
+
 #falcon-two {
-    width: 56px;
-    display: flex;
-    border-radius: 20%;
-    margin-top: 10px;
-    margin-left: 5px;
+    width: 4.5vw;
+    height: 4.5vw;
+    border-radius: 11%;
+    -webkit-user-drag: none;
+    margin-left: 0.9vw;
 }
 /*column styles*/
 
 /*table styles*/
 .board-container {
-    width: 600px;
-    height: 600px;
+    width: 50vw;
+    height: 50vw;
     align-content: center;
     z-index: 1;
     display: flex;
@@ -191,8 +189,8 @@ button:active {
 }
 .row1, .row2, .row3 {
     display: inline-flex;
-    width: 25%;
-    padding: 5px 10px;
+    width: 20%;
+    padding: 0
 
 }
 #x-one, #x-two, #x-three, #x-four, #x-five, #x-five, #x-six, #x-seven, #x-eight, #x-nine {
@@ -200,8 +198,8 @@ button:active {
 }
 #one, #two, #three, #four, #five, #six, #seven, #eight, #nine {
     z-index: 5;
-    width: 200px;
-    height: 200px;
+    width: 18vw;
+    height: 18vw;
     /*border: crimson 5px solid;*/
     opacity: 0.001;
     -webkit-user-drag: none;
