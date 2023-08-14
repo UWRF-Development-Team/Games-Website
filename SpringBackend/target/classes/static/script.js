@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     for (let item of board) {
         item.addEventListener("click", makeMove); //add event listener to all squares
     }
-    startButton.addEventListener("click", resetBoard); //add event listener to start button
+    // startButton.addEventListener("click", resetBoard); //add event listener to start button
 
     function switchPlayer() { //switch the current player
         currentPlayer = currentPlayer === 1? 2: 1;

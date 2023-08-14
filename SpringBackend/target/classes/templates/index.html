@@ -25,12 +25,13 @@
 <!----------------------------Tic-Tac-Toe-Title------------------------------>
 <header>
     <h1 id="tic-tac-toe-title">Tic-Tac-Toe</h1>
-    <h3 id="title">by the UWRF Development Team</h3>
+<!--    <h3 id="title">by the UWRF Development Team</h3>-->
+
 </header>
 
 <div id="body-top">
     <h3>
-        <button>Start Game</button>
+        <button id="start-button">Start Game</button>
     </h3>
     <h2 id="announcement">Turn: Player 1</h2>
 </div>
@@ -40,15 +41,15 @@
 <div class="board-container">
 
     <div class="board">
-        <div class="row1"><img th:src="@{/images/O.png}" id="one" src="../static/images/O.png"  alt="red o"></div>
-        <div class="row1"><img th:src="@{/images/O.png}" id="two" src="../static/images/O.png" alt="red o"></div>
-        <div class="row1"><img th:src="@{/images/O.png}" id="three" src="../static/images/O.png" alt="red o"></div>
-        <div class="row2"><img th:src="@{/images/O.png}" id="four" src="../static/images/O.png" alt="red o"></div>
-        <div class="row2"><img th:src="@{/images/O.png}" id="five" src="../static/images/O.png" alt="red o"></div>
-        <div class="row2"><img th:src="@{/images/O.png}" id="six" src="../static/images/O.png" alt="red o"></div>
-        <div class="row3"><img th:src="@{/images/O.png}" id="seven" src="../static/images/O.png" alt="red o"></div>
-        <div class="row3"><img th:src="@{/images/O.png}" id="eight" src="../static/images/O.png" alt="red o"></div>
-        <div class="row3"><img th:src="@{/images/O.png}" id="nine" src="../static/images/O.png" alt="red o"></div>
+        <div class="row1"><img th:src="${pieceOne}" id="one" th:style="${visOne}"   alt="red o"></div>
+        <div class="row1"><img th:src="${pieceTwo}" id="two" th:style="${visTwo}"  alt="red o"></div>
+        <div class="row1"><img th:src="${pieceThree}" id="three" th:style="${visThree}"  alt="red o"></div>
+        <div class="row2"><img th:src="${pieceFour}" id="four" th:style="${visFour}"  alt="red o"></div>
+        <div class="row2"><img th:src="${pieceFive}" id="five" th:style="${visFive}"  alt="red o"></div>
+        <div class="row2"><img th:src="${pieceSix}" id="six" th:style="${visSix}"  alt="red o"></div>
+        <div class="row3"><img th:src="${pieceSeven}" id="seven" th:style="${visSeven}"  alt="red o"></div>
+        <div class="row3"><img th:src="${pieceEight}" id="eight" th:style="${visEight}"  alt="red o"></div>
+        <div class="row3"><img th:src="${pieceNine}" id="nine" th:style="${visNine}"  alt="red o"></div>
     </div>
 
 </div>
