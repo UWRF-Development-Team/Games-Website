@@ -139,7 +139,7 @@ button:active {
     border: darkred 15px solid;
     border-radius: 50px;
     -webkit-user-drag: none;
-    background-image: url("SpringBackend/src/main/resources/static/imageso 5.png");
+    background-image: url("images/Tic-Tac-Toe-Game-Template.png");
 }
 #falcon {
     width: 40%;
