@@ -55,7 +55,7 @@ import org.springframework.web.bind.annotation.*;
  * application from. In a general sense, this annotation is used to tell
  * Spring that this the booting class.
 ----------------------------------------------------------------------------*/
-@RestController
+// @RestController
 /*---------------------------------Excerpt------------------------------------
  * @RestController is a Spring MVC annotation that specializes in building
  * APIs. It's an extension of @Controller designed for RESTful APIs, directly
@@ -66,14 +66,14 @@ import org.springframework.web.bind.annotation.*;
  * Spring MVC application is responsible for serving client requests and
  * preparing a model which can generate the output representation.
 ----------------------------------------------------------------------------*/
-@Component
+// @Component
 /*---------------------------------Excerpt------------------------------------
  * @Component marks a Java class as a building block in Spring. These beans
  * are managed by Spring, like pieces in a puzzle. They provide services,
  * such as connecting to databases. It's a way to tell Spring that this class
  * plays a special role and should be used where needed.
 ----------------------------------------------------------------------------*/
-@Service
+// @Service
 /*---------------------------------Excerpt------------------------------------
  * @Service is marker for any class that's providing a service. An example of
  * a service is a class that connects to a database. It's a way to tell Spring
@@ -86,7 +86,7 @@ import org.springframework.web.bind.annotation.*;
  * algorithms. Use it for any class that's providing an element of
  * functionality.
 ----------------------------------------------------------------------------*/
-@Controller
+// @Controller
 /*---------------------------------Excerpt------------------------------------
  * @Controller is a Spring MVC annotation that handles requests. It's a way to
  * tell Spring that this class should be used to handle requests. Use this
@@ -96,10 +96,8 @@ import org.springframework.web.bind.annotation.*;
  * model which can generate the output representation.
 ----------------------------------------------------------------------------*/
 public class DeveloperNotes {
-    @EventListener
-    public void exampleEvent() {
-    }
-
+//    @EventListener
+//    public void exampleEvent() {}
     /*--------------------------------Excerpt---------------------------------
      * @EventListener is used to handle events in Spring. It's a way to tell
      * Spring that this method should be called when an event is fired. Events
@@ -110,9 +108,8 @@ public class DeveloperNotes {
      * is like a notification that something has happened and has the
      * capability to trigger a response.
      -----------------------------------------------------------------------*/
-    @RequestMapping("/rest_mapping")
-    public void exampleMapping() {
-    }
+//    @RequestMapping("/rest_mapping")
+//    public void exampleMapping() {}
     /*--------------------------------Excerpt---------------------------------
      * @RequestMapping is used to map a URL to a method. It's a way to tell
      * Spring that this method should be called when a certain URL is visited.
@@ -134,10 +131,9 @@ public class DeveloperNotes {
         * response.
      -----------------------------------------------------------------------*/
     // @PathVariable
-    String examplePathVariable(@PathVariable String example) {
-        return example;
-    }
-
+//    String examplePathVariable(@PathVariable String example) {
+//        return example;
+//    }
     /*--------------------------------Excerpt---------------------------------
      * @PathVariable is used to get a variable from a URL. It's a way to tell
      * Spring that this method should be called when a certain URL is visited
@@ -149,10 +145,9 @@ public class DeveloperNotes {
      * response and pass a variable from the URL to the method.
      -----------------------------------------------------------------------*/
     // @RequestParam
-    String exampleRequestParam(@RequestParam String example) {
-        return example;
-    }
-
+//    String exampleRequestParam(@RequestParam String example) {
+//        return example;
+//    }
     /*--------------------------------Excerpt---------------------------------
      * @RequestParam is used to get a variable from a URL. It's a way to tell
      * Spring that this method should be called when a certain URL is visited
@@ -164,9 +159,9 @@ public class DeveloperNotes {
      * to trigger a response and pass a variable from the URL to the method.
      -----------------------------------------------------------------------*/
     // @RequestBody
-    String exampleRequestBody(@RequestBody String example) {
-        return example;
-    }
+//    String exampleRequestBody(@RequestBody String example) {
+//        return example;
+//    }
 
     /*--------------------------------Excerpt---------------------------------
      * @RequestBody is used to get a variable from a request body. It's a way
@@ -180,10 +175,9 @@ public class DeveloperNotes {
      * response and pass a variable from the request body to the method.
      -----------------------------------------------------------------------*/
     // @RequestHeader
-    String exampleRequestHeader(@RequestHeader String example) {
-        return example;
-    }
-
+//    String exampleRequestHeader(@RequestHeader String example) {
+//        return example;
+//    }
     /*--------------------------------Excerpt---------------------------------
      * @RequestHeader is used to get a variable from a request header. It's a
      * way to tell Spring that this method should be called when a certain
@@ -196,10 +190,10 @@ public class DeveloperNotes {
      * trigger a response and pass a variable from the request header to the
      * method.
      -----------------------------------------------------------------------*/
-    @ModelAttribute
-    String exampleModelAttribute(@ModelAttribute String example) {
-        return example;
-    }
+//    @ModelAttribute
+//    String exampleModelAttribute(@ModelAttribute String example) {
+//        return example;
+//    }
     /*--------------------------------Excerpt---------------------------------
      * @ModelAttribute is used to get a variable from a model. In this
      * context, a model is a Java object that contains data and can be passed
@@ -215,9 +209,9 @@ public class DeveloperNotes {
      * to trigger a response and pass a variable from the model to the method.
      -----------------------------------------------------------------------*/
     // @SessionAttribute
-    String exampleSessionAttribute(@SessionAttribute String example) {
-        return example;
-    }
+//    String exampleSessionAttribute(@SessionAttribute String example) {
+//        return example;
+//    }
     /*--------------------------------Excerpt---------------------------------
      * @SessionAttribute is used to get a variable from a session. In this
      * context, a session is a Java object that contains data and can be
@@ -234,9 +228,9 @@ public class DeveloperNotes {
      * session to the method.
      -----------------------------------------------------------------------*/
     // @CookieValue
-    String exampleCookieValue(@CookieValue String example) {
-        return example;
-    }
+//    String exampleCookieValue(@CookieValue String example) {
+//        return example;
+//    }
     /*--------------------------------Excerpt---------------------------------
      * @CookieValue is used to get a variable from a cookie. In this context,
      * a cookie is a Java object that contains data and can be passed between
@@ -251,8 +245,8 @@ public class DeveloperNotes {
      * a certain type of cookie has been received and has the capability to
      * trigger a response and pass a variable from the cookie to the method.
      * ---------------------------------------------------------------------*/
-    @Autowired
-    public DeveloperNotes() {}
+//    @Autowired
+//    public DeveloperNotes() {}
     /*--------------------------------Excerpt---------------------------------
      * @Autowired is used to automatically create an object and pass it to a
      * constructor. It's a way to tell Spring that this class should be
