@@ -1,5 +1,4 @@
-package org.falcon;
-
+package org.falcon.TicTacToeServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
