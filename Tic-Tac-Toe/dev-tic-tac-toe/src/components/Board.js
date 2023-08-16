@@ -1,7 +1,14 @@
 import gameBoard from "../images/Template.webp";
 import redO from "../images/O.png";
 import  "./styles/Board.css";
+import React from "react";
+
 export default function Board() {
+    React.useEffect(() => {
+        window.addEventListener('click', (spot) => {/*call the api*/})
+
+    }, [])
+
     return (
         <div> 
         <img id="board-img" alt="board" src={gameBoard}></img>
