@@ -1,0 +1,4 @@
+Here is the place to draft pseduo code before starting to code.
+This gives the mind a good sense of structure and purpse while
+unshakling from the details which would slow down this particular
+process.
