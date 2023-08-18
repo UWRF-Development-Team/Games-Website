@@ -1,6 +1,6 @@
-package org.falcon.TicTacToeServer.service;
+package org.falcon.server.service;
 
-import org.falcon.TicTacToeServer.model.TicTacToe;
+import org.falcon.server.model.TicTacToe;
 import org.springframework.stereotype.Service;
 @Service
 public class TicTacToeService {

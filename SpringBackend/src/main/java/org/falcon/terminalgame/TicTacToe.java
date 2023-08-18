@@ -1,4 +1,4 @@
-package org.falcon.TicTacToeCMD;
+package org.falcon.terminalgame;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

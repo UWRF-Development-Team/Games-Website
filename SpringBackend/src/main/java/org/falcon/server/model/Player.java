@@ -1,4 +1,5 @@
-package org.falcon.TicTacToeCMD;
+package org.falcon.server.model;
+
 public class Player {
     char playerPiece;
     String name;
@@ -15,7 +16,11 @@ public class Player {
     public String getName() {
         return this.name;
     }
-    public boolean isCurrentPlayer() {
+    public boolean getIsCurrentPlayer() {
         return this.isCurrentPlayer;
+    }
+    //-------------------------------Setters----------------------------------
+    public void setIsCurrentPlayer(boolean isCurrentPlayer) {
+        this.isCurrentPlayer = isCurrentPlayer;
     }
 }

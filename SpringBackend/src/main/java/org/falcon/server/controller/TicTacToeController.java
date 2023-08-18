@@ -1,6 +1,6 @@
-package org.falcon.TicTacToeServer.controller;
+package org.falcon.server.controller;
 
-import org.falcon.TicTacToeServer.service.TicTacToeService;
+import org.falcon.server.service.TicTacToeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;

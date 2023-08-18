@@ -1,36 +1,22 @@
-package org.falcon.TicTacToeCMD;
+package org.falcon.server.model;
+
 public class Board {
     private char[] board;
     public Board() {
         this.board = new char[9];
+        this.resetBoard();
     }
-    //-------------------------------Get-Board--------------------------------
-    public char[] getBoard() {
-        return this.board;
-    }
-    //------------------------------Clear-Board-------------------------------
+    //-------------------------------Methods----------------------------------
     public void resetBoard() {
         for (int i = 0; i < 9; i++) {
             this.board[i] = ' ';
         }
     }
-    //--------------------------Print-Current-Board---------------------------
-    public void printBoard() {
-        System.out.println("-------------"); // 0 1 2    1 2 3
-        for (int i = 0; i < 9; i += 3) {     // 3 4 5 -> 4 5 6
-            System.out.println("| " +        // 6 7 8    7 8 9
-                               this.board[i] +     " | " +
-                               this.board[i + 1] + " | " +
-                               this.board[i + 2] + " |");
-            System.out.println("-------------");
-        }
-    }
-    //---------------------------Spot-Availability----------------------------
+    //--------------------------Spot-Availability-----------------------------
     public boolean isAvailable(int slot) {
         return this.board[slot] == ' ';
     }
-
-    //----------------------------Determine-Draw------------------------------
+    //---------------------------Determine-Draw-------------------------------
     public boolean isDraw() {
         for (int i = 0; i < 9; i++) {
             if (this.board[i] == ' ') {
@@ -39,7 +25,7 @@ public class Board {
         }
         return true;
     }
-    //----------------------------Determine-Winner----------------------------
+    //--------------------------Determine-Winner------------------------------
     public char determineWinner() {
         //--------------------------------Rows--------------------------------
         for (int i = 0; i < 9; i += 3) {
@@ -58,17 +44,22 @@ public class Board {
             }
         }
         //------------------------------Diagonals-----------------------------
-        if (this.board[0] == this.board[4] &&          // Downward diagonal
+        if (this.board[0] == this.board[4] &&
             this.board[4] == this.board[8] &&
             this.board[0] != ' ') {
             return this.board[0];
-        }
-        if (this.board[2] == this.board[4] &&         // Upward diagonal
-            this.board[4] == this.board[6] &&
-            this.board[2] != ' ') {
+        } else if (this.board[2] == this.board[4] &&
+                   this.board[4] == this.board[6] &&
+                   this.board[2] != ' ') {
             return this.board[2];
         }
-        return 'N'; // No winner, null, none, ect.
+        return 'N';
     }
-}
 
+
+    //------------------------------Getters-----------------------------------
+    public char[] getBoard() {
+        return this.board;
+    }
+
+}

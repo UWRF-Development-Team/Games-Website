@@ -1,4 +1,4 @@
-package org.falcon.TicTacToeServer.model;
+package org.falcon.server.model;
 
 public class TicTacToe {
     Player X, O;
