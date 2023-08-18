@@ -1,4 +1,4 @@
-package org.falcon.TicTacToeLogic;
+package org.falcon.TicTacToeCMD;
 public class Board {
     private char[] board;
     public Board() {

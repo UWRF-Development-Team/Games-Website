@@ -16,3 +16,5 @@
     is inherent to the code or another issue altogether. Isolate chains of
     events to try and find the solution to one problem insead of flooding the
     code with data before being able to implement the data.
+------------------------------------------------------------------------------
+Print out everything -- old fashioned debugging

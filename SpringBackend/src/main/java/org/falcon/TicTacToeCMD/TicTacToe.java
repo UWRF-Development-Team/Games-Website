@@ -1,4 +1,4 @@
-package org.falcon.TicTacToeLogic;
+package org.falcon.TicTacToeCMD;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package org.falcon.TicTacToeLogic;
+package org.falcon.TicTacToeCMD;
 public class Player {
     char playerPiece;
     String name;
