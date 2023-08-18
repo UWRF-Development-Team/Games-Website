@@ -12,11 +12,18 @@ public class TicTacToeController {
     public TicTacToeController(TicTacToeService ticTacToeService) {
         this.ticTacToeService = ticTacToeService;
     }
+    // Note: many methods return a String. This String is the name of the HTML
+    // page that is returned to the user without the .html extension.
+
     //----------------------------Game-Page-----------------------------------
     @RequestMapping("/tictactoe")
     public String index() {
         return "index";
     }
+    // The address of is linked to the method that returns the HTML page
+    // index.html. The method index() is called when the address is accessed.
+    // The method index() returns the String "index" which is the name of the
+    // HTML page that is returned to the user.
     //-----------------------------Make-Move----------------------------------
     @RequestMapping("/tictactoe/board/{slot}")
     public String board(@PathVariable int slot, Model pageModel) {
@@ -30,6 +37,7 @@ public class TicTacToeController {
         }
         return "index";
     }
+
     //----------------------------Clear-Board---------------------------------
     @RequestMapping("/tictactoe/board/clear")
     public String clear(Model pageModel) {
