@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TicTacToeRestController {
+
     //------------------------------Game-Status-------------------------------
     @GetMapping("/api/tictactoe/status")
     public String getStatus() {

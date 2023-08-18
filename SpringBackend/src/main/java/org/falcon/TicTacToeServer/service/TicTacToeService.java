@@ -4,6 +4,7 @@ import org.falcon.TicTacToeServer.model.TicTacToe;
 import org.springframework.stereotype.Service;
 @Service
 public class TicTacToeService {
+
     private TicTacToe game = new TicTacToe();
 
     // TODO: playTicTacToe() is better suited as ticTacToeSequence()
