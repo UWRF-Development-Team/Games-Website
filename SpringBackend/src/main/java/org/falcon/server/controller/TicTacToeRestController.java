@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TicTacToeRestController {
 
     //------------------------------Game-Status-------------------------------
-    @GetMapping("/api/tictactoe/status")
+    @GetMapping("/api/status")
     public String getStatus() {
         String status =
                 """
