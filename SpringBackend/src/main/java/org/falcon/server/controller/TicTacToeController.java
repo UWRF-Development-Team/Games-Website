@@ -1,5 +1,6 @@
 package org.falcon.server.controller;
 
+import jakarta.websocket.OnOpen;
 import org.falcon.server.service.TicTacToeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +20,7 @@ public class TicTacToeController {
     public String index() {
         return "index";
     }
-    @PostMapping("/changeheader")
+    @RequestMapping("/changeheader")
     public String changeheader(Model model) {
         model.addAttribute("gameInfoHeader", "Tic Tac Toe");
         return "index";
