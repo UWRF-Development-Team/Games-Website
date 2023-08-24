@@ -1,2 +1,4 @@
 /.ai/
 /SpringBackend/src/main/resources/application.properties
+/.fastRequest/
+/logs/
