@@ -31,7 +31,7 @@ public class TicTacToe {
     public void playTicTacToe() {
         this.board.resetBoard();
         while (true) {
-            this.makeMove();
+            //this.makeMove();
             // call to frontend to update visual board
             char outcome = this.board.determineWinner();
             if (outcome != 'N') {
@@ -48,9 +48,11 @@ public class TicTacToe {
         return 1;
     }
     //-----------------------------Make-Move----------------------------------
-    public void makeMove() {
-        int slotChoice = this.userInput();
-        this.placePiece(slotChoice);
+    public void makeMove(int slotChoice) {
+        if (this.board.isAvailable(slotChoice)) {
+            this.placePiece(slotChoice);
+            this.switchPlayer();
+        }
     }
     //-----------------------------Place-Piece--------------------------------
     public void placePiece(int slot) {
