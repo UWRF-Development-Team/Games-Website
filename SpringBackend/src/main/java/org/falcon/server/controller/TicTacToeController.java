@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class TicTacToeController {
     // Note: many methods return a String. This String is the name of the HTML
-    // page that is returned to the user without the .html extension.
+    //       page that is returned to the user without the .html extension.
     @Autowired
     private TicTacToeService service;
     @Autowired
@@ -22,16 +22,20 @@ public class TicTacToeController {
     public String index() {
         return "index";
     }
+    //------------------------Simple-Change-Header----------------------------
     @RequestMapping("/tictactoe/changeheader")
     public String changeHeader(Model model) {
         model.addAttribute("gameInfoHeader", "Tic Tac Toe");
         return "index";
     }
+    //-----------------------------Start-Game---------------------------------
+    @Deprecated
     @RequestMapping("/tictactoe/startgame")
     public String startGame(Model model) {
         model.addAttribute("visOne", "opacity: 0.001;");
         return "index";
     }
+    //----------------------------Reset-Board---------------------------------
     @RequestMapping("/tictactoe/resetboard")
     public String resetBoard(Model model) {
         this.service.getGame().getBoard().resetBoard();
@@ -43,15 +47,16 @@ public class TicTacToeController {
         }
         return "index";
     }
+    //----------------------------Select-Spot---------------------------------
     @RequestMapping("/tictactoe/select/{spot}")
     public String selectSpot(@PathVariable String spot, Model model) {
-
+        //-------------------------Load-Board---------------------------------
         for (int i = 0; i < 9; i++) {
             String[] pieceSrc = {"pieceOne", "pieceTwo", "pieceThree",
-                        "pieceFour", "pieceFive", "pieceSix", "pieceSeven",
-                        "pieceEight", "pieceNine"};
+                                 "pieceFour", "pieceFive", "pieceSix", "pieceSeven",
+                                 "pieceEight", "pieceNine"};
             String[] vis = {"visOne", "visTwo", "visThree", "visFour", "visFive",
-                    "visSix", "visSeven", "visEight", "visNine"};
+                            "visSix", "visSeven", "visEight", "visNine"};
             if (this.service.getGame().getBoard().getBoard()[i] == 'X') {
                 model.addAttribute(vis[i], "opacity: 1");
                 model.addAttribute(pieceSrc[i], "/images/X.png");
@@ -62,27 +67,27 @@ public class TicTacToeController {
                 model.addAttribute(vis[i], "opacity: 0.001");
             }
         }
-
+        //-------------------------Make-Move----------------------------------
         int intSpot = Integer.parseInt(spot) - 1;
         if (this.service.getGame().getBoard().isAvailable(intSpot)) {
             if (this.service.getGame().getCurrentPlayer().getPlayerPiece() == 'X') {
                 this.service.getGame().makeMove(intSpot);
 
                 String[] pieceSrc = {"pieceOne", "pieceTwo", "pieceThree",
-                        "pieceFour", "pieceFive", "pieceSix", "pieceSeven",
-                        "pieceEight", "pieceNine"};
+                                     "pieceFour", "pieceFive", "pieceSix", "pieceSeven",
+                                     "pieceEight", "pieceNine"};
                 String[] vis = {"visOne", "visTwo", "visThree", "visFour", "visFive",
-                        "visSix", "visSeven", "visEight", "visNine"};
+                                "visSix", "visSeven", "visEight", "visNine"};
                 String visAttr = "opacity: 1";
                 model.addAttribute(vis[intSpot], visAttr);
                 model.addAttribute(pieceSrc[intSpot], "/images/X.png");
             } else {
                 this.service.getGame().makeMove(intSpot);
                 String[] pieceSrc = {"pieceOne", "pieceTwo", "pieceThree",
-                        "pieceFour", "pieceFive", "pieceSix", "pieceSeven",
-                        "pieceEight", "pieceNine"};
+                                     "pieceFour", "pieceFive", "pieceSix", "pieceSeven",
+                                     "pieceEight", "pieceNine"};
                 String[] vis = {"visOne", "visTwo", "visThree", "visFour", "visFive",
-                        "visSix", "visSeven", "visEight", "visNine"};
+                                "visSix", "visSeven", "visEight", "visNine"};
                 String visAttr = "opacity: 1";
                 model.addAttribute(vis[intSpot], visAttr);
                 model.addAttribute(pieceSrc[intSpot], "/images/O.png");
@@ -97,5 +102,4 @@ public class TicTacToeController {
         model.addAttribute("gameInfoHeader", header);
         return "index";
     }
-
 }
