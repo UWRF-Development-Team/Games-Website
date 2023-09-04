@@ -72,29 +72,24 @@ public class TicTacToeController {
         if (this.service.getGame().getBoard().isAvailable(intSpot)) {
             if (this.service.getGame().getCurrentPlayer().getPlayerPiece() == 'X') {
                 this.service.getGame().makeMove(intSpot);
-
-                String[] pieceSrc = {"pieceOne", "pieceTwo", "pieceThree",
-                                     "pieceFour", "pieceFive", "pieceSix", "pieceSeven",
-                                     "pieceEight", "pieceNine"};
-                String[] vis = {"visOne", "visTwo", "visThree", "visFour", "visFive",
-                                "visSix", "visSeven", "visEight", "visNine"};
-                String visAttr = "opacity: 1";
-                model.addAttribute(vis[intSpot], visAttr);
-                model.addAttribute(pieceSrc[intSpot], "/images/X.png");
+                this.selectSpotModel("/images/X.png", intSpot, model);
             } else {
                 this.service.getGame().makeMove(intSpot);
-                String[] pieceSrc = {"pieceOne", "pieceTwo", "pieceThree",
-                                     "pieceFour", "pieceFive", "pieceSix", "pieceSeven",
-                                     "pieceEight", "pieceNine"};
-                String[] vis = {"visOne", "visTwo", "visThree", "visFour", "visFive",
-                                "visSix", "visSeven", "visEight", "visNine"};
-                String visAttr = "opacity: 1";
-                model.addAttribute(vis[intSpot], visAttr);
-                model.addAttribute(pieceSrc[intSpot], "/images/O.png");
+                this.selectSpotModel("/images/O.png", intSpot, model);
             }
         }
         this.service.getGame().getBoard().printBoard();
         return "index";
+    }
+    public void selectSpotModel(String imgPath, int spot, Model model) {
+        String[] pieceSrc = {"pieceOne", "pieceTwo", "pieceThree",
+                             "pieceFour", "pieceFive", "pieceSix", "pieceSeven",
+                             "pieceEight", "pieceNine"};
+        String[] vis = {"visOne", "visTwo", "visThree", "visFour", "visFive",
+                        "visSix", "visSeven", "visEight", "visNine"};
+        String visAttr = "opacity: 1";
+        model.addAttribute(vis[spot], visAttr);
+        model.addAttribute(pieceSrc[spot], imgPath);
     }
     //--------------------------------Test------------------------------------
     @RequestMapping("/tictactoe/test/changeheader/{header}")
