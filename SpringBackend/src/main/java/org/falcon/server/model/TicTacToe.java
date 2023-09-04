@@ -19,9 +19,11 @@ public class TicTacToe {
     //----------------------------Switch-Player-------------------------------
     public void switchPlayer() {
         if (this.X.getIsCurrentPlayer()) {
+            System.out.println("Switching to O");
             this.X.setIsCurrentPlayer(false);
             this.O.setIsCurrentPlayer(true);
         } else {
+            System.out.println("Switching to X");
             this.X.setIsCurrentPlayer(true);
             this.O.setIsCurrentPlayer(false);
         }
