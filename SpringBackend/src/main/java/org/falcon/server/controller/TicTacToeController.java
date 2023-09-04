@@ -66,7 +66,7 @@ public class TicTacToeController {
         int intSpot = Integer.parseInt(spot) - 1;
         if (this.service.getGame().getBoard().isAvailable(intSpot)) {
             if (this.service.getGame().getCurrentPlayer().getPlayerPiece() == 'X') {
-                this.service.getGame().placePiece(intSpot);
+                this.service.getGame().makeMove(intSpot);
 
                 String[] pieceSrc = {"pieceOne", "pieceTwo", "pieceThree",
                         "pieceFour", "pieceFive", "pieceSix", "pieceSeven",
@@ -77,7 +77,7 @@ public class TicTacToeController {
                 model.addAttribute(vis[intSpot], visAttr);
                 model.addAttribute(pieceSrc[intSpot], "/images/X.png");
             } else {
-                this.service.getGame().placePiece(intSpot);
+                this.service.getGame().makeMove(intSpot);
                 String[] pieceSrc = {"pieceOne", "pieceTwo", "pieceThree",
                         "pieceFour", "pieceFive", "pieceSix", "pieceSeven",
                         "pieceEight", "pieceNine"};
@@ -88,6 +88,7 @@ public class TicTacToeController {
                 model.addAttribute(pieceSrc[intSpot], "/images/O.png");
             }
         }
+        this.service.getGame().getBoard().printBoard();
         return "index";
     }
     //--------------------------------Test------------------------------------
