@@ -55,7 +55,17 @@ public class Board {
         }
         return 'N';
     }
-
+    //--------------------------Print-Current-Board---------------------------
+    public void printBoard() {
+        System.out.println("-------------"); // 0 1 2    1 2 3
+        for (int i = 0; i < 9; i += 3) {     // 3 4 5 -> 4 5 6
+            System.out.println("| " +        // 6 7 8    7 8 9
+                               this.board[i] +     " | " +
+                               this.board[i + 1] + " | " +
+                               this.board[i + 2] + " |");
+            System.out.println("-------------");
+        }
+    }
 
     //------------------------------Getters-----------------------------------
     public char[] getBoard() {
