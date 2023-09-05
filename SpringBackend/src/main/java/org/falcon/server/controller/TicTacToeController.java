@@ -15,7 +15,13 @@ public class TicTacToeController {
     private TicTacToeService service;
     @Autowired
     private HttpSession session;
-
+    static final String[] pieceSrc = {"pieceOne", "pieceTwo", "pieceThree",
+                                      "pieceFour", "pieceFive", "pieceSix",
+                                      "pieceSeven", "pieceEight",
+                                      "pieceNine"};
+    static final String[] pieceVis = {"visOne", "visTwo", "visThree",
+                                      "visFour", "visFive", "visSix",
+                                      "visSeven", "visEight", "visNine"};
 
     //----------------------------Game-Page-----------------------------------
     @RequestMapping("/tictactoe")
@@ -40,9 +46,8 @@ public class TicTacToeController {
     public String resetBoard(Model model) {
         this.service.getGame().getBoard().resetBoard();
         final String INVIS_ATTR = "opacity: 0.001;";
-        String[] vis = {"visOne", "visTwo", "visThree", "visFour", "visFive",
-                "visSix", "visSeven", "visEight", "visNine"};
-        for (String attr : vis) {
+
+        for (String attr : pieceVis) {
             model.addAttribute(attr, INVIS_ATTR);
         }
         return "index";
@@ -52,19 +57,14 @@ public class TicTacToeController {
     public String selectSpot(@PathVariable String spot, Model model) {
         //-------------------------Load-Board---------------------------------
         for (int i = 0; i < 9; i++) {
-            String[] pieceSrc = {"pieceOne", "pieceTwo", "pieceThree",
-                                 "pieceFour", "pieceFive", "pieceSix", "pieceSeven",
-                                 "pieceEight", "pieceNine"};
-            String[] vis = {"visOne", "visTwo", "visThree", "visFour", "visFive",
-                            "visSix", "visSeven", "visEight", "visNine"};
             if (this.service.getGame().getBoard().getBoard()[i] == 'X') {
-                model.addAttribute(vis[i], "opacity: 1");
+                model.addAttribute(pieceVis[i], "opacity: 1");
                 model.addAttribute(pieceSrc[i], "/images/X.png");
             } else if (this.service.getGame().getBoard().getBoard()[i] == 'O') {
-                model.addAttribute(vis[i], "opacity: 1");
+                model.addAttribute(pieceVis[i], "opacity: 1");
                 model.addAttribute(pieceSrc[i], "/images/O.png");
             } else {
-                model.addAttribute(vis[i], "opacity: 0.001");
+                model.addAttribute(pieceVis[i], "opacity: 0.001");
             }
         }
         //-------------------------Make-Move----------------------------------
@@ -82,13 +82,8 @@ public class TicTacToeController {
         return "index";
     }
     public void selectSpotModel(String imgPath, int spot, Model model) {
-        String[] pieceSrc = {"pieceOne", "pieceTwo", "pieceThree",
-                             "pieceFour", "pieceFive", "pieceSix", "pieceSeven",
-                             "pieceEight", "pieceNine"};
-        String[] vis = {"visOne", "visTwo", "visThree", "visFour", "visFive",
-                        "visSix", "visSeven", "visEight", "visNine"};
         String visAttr = "opacity: 1";
-        model.addAttribute(vis[spot], visAttr);
+        model.addAttribute(pieceVis[spot], visAttr);
         model.addAttribute(pieceSrc[spot], imgPath);
     }
     //--------------------------------Test------------------------------------
