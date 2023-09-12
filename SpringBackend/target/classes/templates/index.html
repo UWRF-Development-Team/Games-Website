@@ -23,15 +23,16 @@
 </nav>
 <!----------------------------Tic-Tac-Toe-Title------------------------------>
 <header>
-    <a href="http://localhost:8080/tictactoe"><h1 id="tic-tac-toe-title">
-        Tic-Tac-Toe</h1></a>
+    <a href="http://localhost:8080/tictactoe">
+        <h1 id="tic-tac-toe-title">
+            Tic-Tac-Toe
+        </h1>
+    </a>
 </header>
 <div id="body-top">
-    <a href="http://localhost:8080/tictactoe/resetboard">
-        <h3>
-            <button id="start-button">Start Game</button>
-        </h3>
-    </a>
+    <h3>
+        <button id="start-button">Start Game</button>
+    </h3>
     <h2 id="announcement" th:text="${gameInfoHeader}">Turn: Player 1</h2>
 </div>
 <!---------------------------------Game-Board-------------------------------->
