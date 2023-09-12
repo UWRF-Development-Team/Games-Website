@@ -50,7 +50,7 @@ public class TicTacToeController {
         for (String attr : pieceVis) {
             model.addAttribute(attr, INVIS_ATTR);
         }
-        return "index";
+        return "boardPatch :: boardPatch";
     }
     //----------------------------Select-Spot---------------------------------
 //    @Deprecated
