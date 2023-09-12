@@ -82,11 +82,15 @@ public class TicTacToeController {
         };
         if (this.service.getGame().getBoard().isAvailable(intSpot)) {
             if (this.service.getGame().getCurrentPlayer().getPlayerPiece() == 'X') {
+                model.addAttribute("gameInfoHeader", "X's Turn");
                 this.service.getGame().makeMove(intSpot);
                 this.selectSpotModel("/images/X.png", intSpot, model);
+
             } else {
+                model.addAttribute("gameInfoHeader", "O's Turn");
                 this.service.getGame().makeMove(intSpot);
                 this.selectSpotModel("/images/O.png", intSpot, model);
+
             }
         }
         this.service.getGame().getBoard().printBoard();
