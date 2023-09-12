@@ -14,6 +14,4 @@ public class TicTacToeService {
     public TicTacToe getGame() {
         return this.game;
     }
-
-
 }
