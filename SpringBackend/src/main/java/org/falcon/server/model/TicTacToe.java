@@ -3,6 +3,8 @@ package org.falcon.server.model;
 public class TicTacToe {
     Player X, O;
     Board board;
+    Player winner;
+    boolean isOver;
     public TicTacToe() {
         this.X = new Player('X', "Player 1", true);
         this.O = new Player('O', "Player 2", false);
@@ -54,6 +56,13 @@ public class TicTacToe {
         if (this.board.isAvailable(slotChoice)) {
             this.placePiece(slotChoice);
             this.switchPlayer();
+        }
+        if (this.board.determineWinner() == 'X') {
+            this.winner = this.X;
+            isOver = true;
+        } else if (this.board.determineWinner() == 'O') {
+            this.winner = this.O;
+            isOver = true;
         }
     }
     //-----------------------------Place-Piece--------------------------------
