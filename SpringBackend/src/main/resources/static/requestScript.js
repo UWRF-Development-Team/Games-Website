@@ -1,6 +1,7 @@
 //===============================-Board-Pieces-===============================
 
 //---------------------------------Variables----------------------------------
+let startButton = document.getElementById("start-button");
 let one = document.getElementById("one");
 let two = document.getElementById("two");
 let three = document.getElementById("three");
@@ -23,6 +24,9 @@ function attachListeners() {
              document.getElementById("seven"),
              document.getElementById("eight"),
              document.getElementById("nine")];
+    startButton = document.getElementById("start-button");
+    startButton.removeEventListener("click", resetBoard);
+    startButton.addEventListener("click", resetBoard);
     board.forEach(spot => spot.removeEventListener("click", makeMove));
     board.forEach(spot => spot.addEventListener("click", makeMove));
 }
@@ -33,7 +37,7 @@ function makeMove() {
     console.log(`sent request to ${this.id}`);
     request.onload = function () {
         let fragResponse = request.responseText;
-        let boardDiv = document.getElementById("board");
+        let boardDiv = document.getElementById("board-frag-patch");
         boardDiv.outerHTML = fragResponse;
         attachListeners();
     }
@@ -44,17 +48,18 @@ attachListeners();
 //============================-Start-Game-Button-=============================
 
 //---------------------------------Variables----------------------------------
-let startButton = document.getElementById("start-button");
+
 function resetBoard() {
     let request = new XMLHttpRequest();
     request.open("POST", "tictactoe/resetboard", true);
     console.log("sent request to reset board");
     request.onload = function () {
         let fragResponse = request.responseText;
-        let boardDiv = document.getElementById("board");
+        console.log(fragResponse);
+        let boardDiv = document.getElementById("board-frag-patch");
         boardDiv.outerHTML = fragResponse;
         attachListeners();
     }
     request.send();
 }
-startButton.addEventListener("click", resetBoard);
+attachListeners();
