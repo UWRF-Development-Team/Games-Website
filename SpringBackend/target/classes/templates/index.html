@@ -29,24 +29,9 @@
         </h1>
     </a>
 </header>
-<div id="body-top">
-    <h3>
-        <button id="start-button">Start Game</button>
-    </h3>
-    <h2 id="announcement" th:text="${gameInfoHeader}">Turn: Player 1</h2>
-</div>
-<!---------------------------------Game-Board-------------------------------->
-<img id="board-img" alt="board"
-     src="../static/images/Tic-Tac-Toe-Game-Template.png"
-     th:src="@{/images/Tic-Tac-Toe-Game-Template.png}">
-<div class="board-container">
-    <div id="board" th:replace="boardPatch :: boardPatch">
+<div id="board-frag-patch" th:replace="boardPatch :: boardPatch">
 
-    </div>
 </div>
-<!--<script src="../static/script.js" th:src="@{/script.js}" defer></script>-->
 <script src="../static/requestScript.js" th:src="@{/requestScript.js}" defer></script>
-<!--<script src="../static/requestScriptV2.js" th:src="@{/requestScriptV2.js}" defer></script>-->
-<!--<script src="../static/requestScriptV3.js" th:src="@{/requestScriptV3.js}" defer></script>-->
 </body>
 </html>
