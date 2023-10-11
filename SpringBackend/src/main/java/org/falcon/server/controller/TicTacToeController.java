@@ -82,15 +82,66 @@ public class TicTacToeController {
         };
         if (this.service.getGame().getBoard().isAvailable(intSpot)) {
             if (this.service.getGame().getCurrentPlayer().getPlayerPiece() == 'X') {
-                model.addAttribute("gameInfoHeader", "X's Turn");
+                model.addAttribute("gameInfoHeader", "O's Turn");
                 this.service.getGame().makeMove(intSpot);
                 this.selectSpotModel("/images/X.png", intSpot, model);
 
             } else {
-                model.addAttribute("gameInfoHeader", "O's Turn");
+                model.addAttribute("gameInfoHeader", "X's Turn");
                 this.service.getGame().makeMove(intSpot);
                 this.selectSpotModel("/images/O.png", intSpot, model);
 
+            }
+        }
+        //-------------------------Determine-Winner---------------------------
+        // Horizontal
+        for (int i = 0; i < 9; i += 3) {
+            if (this.service.getGame().getBoard().getBoard()[i] ==
+                    this.service.getGame().getBoard().getBoard()[i + 1] &&
+                    this.service.getGame().getBoard().getBoard()[i + 1] ==
+                    this.service.getGame().getBoard().getBoard()[i + 2] &&
+                    this.service.getGame().getBoard().getBoard()[i] != ' ') {
+                if (this.service.getGame().getBoard().getBoard()[i] == 'X') {
+                    model.addAttribute("gameInfoHeader", "X Wins!");
+                } else {
+                    model.addAttribute("gameInfoHeader", "O Wins!");
+                }
+            }
+        }
+        // Vertical
+        for (int i = 0; i < 3; i++) {
+            if (this.service.getGame().getBoard().getBoard()[i] ==
+                    this.service.getGame().getBoard().getBoard()[i + 3] &&
+                    this.service.getGame().getBoard().getBoard()[i + 3] ==
+                    this.service.getGame().getBoard().getBoard()[i + 6] &&
+                    this.service.getGame().getBoard().getBoard()[i] != ' ') {
+                if (this.service.getGame().getBoard().getBoard()[i] == 'X') {
+                    model.addAttribute("gameInfoHeader", "X Wins!");
+                } else {
+                    model.addAttribute("gameInfoHeader", "O Wins!");
+                }
+            }
+        }
+        // Diagonal
+        if (this.service.getGame().getBoard().getBoard()[0] ==
+                this.service.getGame().getBoard().getBoard()[4] &&
+                this.service.getGame().getBoard().getBoard()[4] ==
+                this.service.getGame().getBoard().getBoard()[8] &&
+                this.service.getGame().getBoard().getBoard()[0] != ' ') {
+            if (this.service.getGame().getBoard().getBoard()[0] == 'X') {
+                model.addAttribute("gameInfoHeader", "X Wins!");
+            } else {
+                model.addAttribute("gameInfoHeader", "O Wins!");
+            }
+        } else if (this.service.getGame().getBoard().getBoard()[2] ==
+                this.service.getGame().getBoard().getBoard()[4] &&
+                this.service.getGame().getBoard().getBoard()[4] ==
+                this.service.getGame().getBoard().getBoard()[6] &&
+                this.service.getGame().getBoard().getBoard()[2] != ' ') {
+            if (this.service.getGame().getBoard().getBoard()[2] == 'X') {
+                model.addAttribute("gameInfoHeader", "X Wins!");
+            } else {
+                model.addAttribute("gameInfoHeader", "O Wins!");
             }
         }
         this.service.getGame().getBoard().printBoard();
