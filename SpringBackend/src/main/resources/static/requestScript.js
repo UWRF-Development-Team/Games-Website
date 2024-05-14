@@ -1,6 +1,7 @@
-//===============================-Board-Pieces-===============================
+//================================-Variables-=================================
 
-//---------------------------------Variables----------------------------------
+//--------------------------------Board-Pieces--------------------------------
+
 let startButton = document.getElementById("start-button");
 let one = document.getElementById("one");
 let two = document.getElementById("two");
@@ -12,6 +13,8 @@ let seven = document.getElementById("seven");
 let eight = document.getElementById("eight");
 let nine = document.getElementById("nine");
 let board = [one, two, three, four, five, six, seven, eight, nine];
+//=============================-Client-Functions-=============================
+
 //---------------------------Load-Listener-Methods----------------------------
 function attachListeners() {
     // Reloads the array of elements when a pseudo-refresh is made
@@ -30,12 +33,15 @@ function attachListeners() {
     board.forEach(spot => spot.removeEventListener("click", makeMove));
     board.forEach(spot => spot.addEventListener("click", makeMove));
 }
+
+//=============================-Server-Functions-=============================
+
 //---------------------------------Make-Move----------------------------------
 function makeMove() {
     let request = new XMLHttpRequest();
     request.open("POST", "tictactoe/select/" + this.id, true);
     console.log(`sent request to ${this.id}`);
-    request.onload = function () {
+    request.onload = function() {
         let fragResponse = request.responseText;
         let boardDiv = document.getElementById("board-frag-patch");
         boardDiv.outerHTML = fragResponse;
@@ -44,16 +50,12 @@ function makeMove() {
     request.send();
 }
 attachListeners();
-
-//============================-Start-Game-Button-=============================
-
-//---------------------------------Variables----------------------------------
-
+//-----------------------------Start-Game-Button------------------------------
 function resetBoard() {
     let request = new XMLHttpRequest();
     request.open("POST", "tictactoe/resetboard", true);
     console.log("sent request to reset board");
-    request.onload = function () {
+    request.onload = function() {
         let fragResponse = request.responseText;
         console.log(fragResponse);
         let boardDiv = document.getElementById("board-frag-patch");
