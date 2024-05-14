@@ -59,10 +59,10 @@ public class TicTacToe {
         }
         if (this.board.determineWinner() == 'X') {
             this.winner = this.X;
-            isOver = true;
+            this.isOver = true;
         } else if (this.board.determineWinner() == 'O') {
             this.winner = this.O;
-            isOver = true;
+            this.isOver = true;
         }
     }
     //-----------------------------Place-Piece--------------------------------
