@@ -1,3 +1,0 @@
-2023-06-16T08:05:23.753Z [s.AiToolwindowsInitializer.reinitializeToolWindows] INFO AI state ENABLED
-2023-06-16T08:05:23.760Z [ctureModificationListener$Companion.initForProject] INFO ProjectStructureModificationListener is init for project Games-Website
-2023-06-16T08:05:24.669Z [intellij.services.AiInitializeManager.initializeAI] INFO IntelliJ listens web server on port: 63343

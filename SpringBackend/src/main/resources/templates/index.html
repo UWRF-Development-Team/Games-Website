@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" dir="ltr"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<!--------------------------------Nav-Bar------------------------------------>
+<nav>
+    <img id="falcon-two" src="../static/images/logo6.png"
+         th:src="@{/images/logo6.png}" alt="falcon-logo">
+    <ul>
+        <li class="nav-items"><h3>Home </h3> </li>
+        <li class="nav-items"><h3>Projects</h3></li>
+        <li class="nav-items"><h3>About Us</h3></li>
+    </ul>
+</nav>
+<!----------------------------Tic-Tac-Toe-Title------------------------------>
+<header>
+    <a href="http://localhost:8080/tictactoe">
+        <h1 id="tic-tac-toe-title">
+            Tic-Tac-Toe
+        </h1>
+    </a>
+</header>
+<div id="board-frag-patch" th:replace="boardPatch :: boardPatch">
+
+</div>
+<script src="../static/requestScript.js" th:src="@{/requestScript.js}" defer></script>
+</body>
+</html>

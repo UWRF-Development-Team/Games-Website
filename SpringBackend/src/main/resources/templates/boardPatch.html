@@ -1,0 +1,52 @@
+<div id="board-frag-patch" th:fragment="boardPatch">
+    <div id="body-top">
+        <h3>
+            <button id="start-button">Start Game</button>
+        </h3>
+        <h2 id="announcement" th:text="${gameInfoHeader}">X's Turn</h2>
+    </div>
+    <!----------------------------Game-Board--------------------------------->
+    <img id="board-img" alt="board"
+         src="../static/images/Tic-Tac-Toe-Game-Template.png"
+         th:src="@{/images/Tic-Tac-Toe-Game-Template.png}">
+    <div class="board-container">
+        <div id="board">
+            <div class="row1">
+                <img th:src="${pieceOne}   ?: '/images/O.png'" id="one"
+                     th:style="${visOne}" alt="red o">
+            </div>
+            <div class="row1">
+                <img th:src="${pieceTwo}   ?: '/images/O.png'" id="two"
+                     th:style="${visTwo}" alt="red o">
+            </div>
+            <div class="row1">
+                <img th:src="${pieceThree} ?: '/images/O.png'" id="three"
+                     th:style="${visThree}" alt="red o">
+            </div>
+            <div class="row2">
+                <img th:src="${pieceFour}  ?: '/images/O.png'" id="four"
+                     th:style="${visFour}" alt="red o">
+            </div>
+            <div class="row2">
+                <img th:src="${pieceFive}  ?: '/images/O.png'" id="five"
+                     th:style="${visFive}" alt="red o">
+            </div>
+            <div class="row2">
+                <img th:src="${pieceSix}   ?: '/images/O.png'" id="six"
+                     th:style="${visSix}" alt="red o">
+            </div>
+            <div class="row3">
+                <img th:src="${pieceSeven} ?: '/images/O.png'" id="seven"
+                     th:style="${visSeven}" alt="red o">
+            </div>
+            <div class="row3">
+                <img th:src="${pieceEight} ?: '/images/O.png'" id="eight"
+                     th:style="${visEight}" alt="red o">
+            </div>
+            <div class="row3">
+                <img th:src="${pieceNine}  ?: '/images/O.png'" id="nine"
+                     th:style="${visNine}" alt="red o">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+
+#announcement {
+    background:none;
+    color:#1a1818;
+    border: none;
+    padding: 0;
+    display:flex;
+    align-content: end;
+    justify-content: center;
+}
+h2 {
+    font-size: 60px;
+}
+
+/*#announcement:hover  {*/
+/*    cursor: pointer;*/
+/*    text-decoration: underline;*/
+/*    transition: color 250ms ease 50ms;*/
+/*    filter: brightness(150%);*/
+/*    box-shadow: 15px 15px 15px #000;*/
+/*}*/

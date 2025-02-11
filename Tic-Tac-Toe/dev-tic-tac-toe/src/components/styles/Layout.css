@@ -1,0 +1,60 @@
+nav {
+    width: 100vw;
+    background-color: #1a1818;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /*position:absolute;*/
+    left: 0;
+    top: 0;
+    height: 7vh;
+    color: cornsilk;
+
+    /*box-shadow: 10px 5px 5px #1a1818;*/
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 10vw 0;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+}
+nav {
+
+}
+ul.nav-items {
+
+}
+.nav-items {
+
+}
+
+.nav-items ul li {
+
+
+}
+nav ul li.nav-items {
+
+
+}
+.nav-list {
+
+}
+li.nav-items img#falcon-two{
+
+    width: 20vw;
+}
+#falcon-two {
+    width:100%;
+
+}
+.nav-items:hover {
+   color:aqua;
+}
+
+#title {
+    white-space: nowrap;
+
+}
